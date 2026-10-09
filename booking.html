@@ -1,171 +1,418 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Search and book flight tickets to Paris, Rome, Lima and New Delhi.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search and book flight tickets to Paris, Rome, Lima and New Delhi."
+    />
     <title>Book Flights | Wanderlust World</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="nav-container">
-            <a href="./index.html" class="logo">
-                <img src="./image/wanderlust.png" alt="Wanderlust logo">
-                Wanderlust <span>World</span>
-            </a>
-            <div class="hamburger-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
-                <img src="./image/hamburger-menu.svg" alt="">
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-                    <li><a href="./colosseum.html">Colosseum</a></li>
-                    <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-                    <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-                    <li><a href="./booking.html" class="active">Book Flights</a></li>
-                </ul>
-            </nav>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="./image/wanderlust.png" type="image/png" />
+
+    <link
+      rel="preload"
+      href="./image/optimized/booking-banner.webp"
+      as="image"
+      fetchpriority="high"
+      imagesrcset="./image/optimized/booking-banner-800.webp 800w, ./image/optimized/booking-banner.webp 1600w"
+      imagesizes="(min-width: 1024px) 60vw, 100vw"
+    />
+    <script src="./js/theme.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+  </head>
+  <body id="top" class="page-booking">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-container">
+        <a href="./index.html" class="logo"
+          ><img
+            src="./image/wanderlust.png"
+            alt="Wanderlust logo"
+            width="32"
+            height="32"
+          />Wanderlust <span>World</span></a
+        >
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html">Colosseum</a></li>
+            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li>
+              <a href="./booking.html" class="active" aria-current="page"
+                >Book Flights</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <img
+              class="theme-icon theme-icon-moon"
+              src="./image/icons/moon.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <img
+              class="theme-icon theme-icon-sun"
+              src="./image/icons/sun.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <span class="sr-only">Switch color theme</span>
+          </button>
+          <button
+            class="hamburger-btn"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="main-nav"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
         </div>
+      </div>
     </header>
-
-    <section class="home-banner booking-banner">
-        <span class="eyebrow">Flights · Worldwide routes</span>
-        <h1>Find Your Flight</h1>
-        <p>Search routes from Hong Kong to Paris, Rome, Lima, and New Delhi. Compare fares and complete your booking in a few steps.</p>
-    </section>
-
-    <main>
-        <section class="booking-panel">
-            <form id="search-form" class="search-form">
-                <div class="form-row form-row-3">
-                    <div class="form-group">
-                        <label for="destination">Destination</label>
-                        <select id="destination" name="destination" required>
-                            <option value="">Select destination</option>
-                            <option value="eiffel-tower">Paris (Eiffel Tower)</option>
-                            <option value="colosseum">Rome (Colosseum)</option>
-                            <option value="machu-picchu">Lima (Machu Picchu)</option>
-                            <option value="taj-mahal">New Delhi (Taj Mahal)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="depart-date">Departure date</label>
-                        <select id="depart-date" name="depart-date">
-                            <option value="">Any available date</option>
-                            <option value="2026-11-12">12 Nov 2026</option>
-                            <option value="2026-11-13">13 Nov 2026</option>
-                            <option value="2026-11-14">14 Nov 2026</option>
-                            <option value="2026-11-15">15 Nov 2026</option>
-                            <option value="2026-11-18">18 Nov 2026</option>
-                            <option value="2026-11-19">19 Nov 2026</option>
-                            <option value="2026-11-20">20 Nov 2026</option>
-                            <option value="2026-11-22">22 Nov 2026</option>
-                        </select>
-                    </div>
-                    <div class="form-group form-actions">
-                        <label>&nbsp;</label>
-                        <button type="submit" class="btn btn-search">Search flights</button>
-                    </div>
-                </div>
-            </form>
-
-            <div id="loading-state" class="loading-state hidden">
-                <div class="spinner"></div>
-                <p>Searching flights from our partners…</p>
-                
-            </div>
-
-            <div id="results-area" class="results-area">
-                <p class="results-placeholder">Choose a destination and search to see available flights.</p>
-            </div>
-        </section>
-
-        <!-- Booking modal -->
-        <div id="booking-modal" class="modal hidden" aria-hidden="true">
-            <div class="modal-backdrop" data-close-modal></div>
-            <div class="modal-panel" role="dialog" aria-labelledby="modal-title">
-                <button type="button" class="modal-close" data-close-modal aria-label="Close">&times;</button>
-                <h2 id="modal-title">Complete your booking</h2>
-                <div id="modal-flight-summary" class="modal-summary"></div>
-                <form id="booking-form" class="booking-form">
-                    <div class="form-row two-col">
-                        <div class="form-group">
-                            <label for="passenger-name">Full name</label>
-                            <input type="text" id="passenger-name" required placeholder="As on passport">
-                        </div>
-                        <div class="form-group">
-                            <label for="passenger-email">Email</label>
-                            <input type="email" id="passenger-email" required placeholder="example@example.com">
-                        </div>
-                    </div>
-                    <div class="form-row two-col">
-                        <div class="form-group">
-                            <label for="passengers">Passengers</label>
-                            <select id="passengers" required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="passenger-phone">Phone (optional)</label>
-                            <input type="tel" id="passenger-phone" placeholder="+852 XXXX-XXXX">
-                        </div>
-                    </div>
-                    <p class="form-note">Please check your details carefully before confirming. A booking reference will be issued after submission.</p>
-                    <button type="submit" class="btn btn-search">Confirm booking</button>
-                </form>
-            </div>
+    <main id="main-content" class="booking-main container">
+      <section class="booking-hero">
+        <div>
+          <h1>Every journey<br />starts somewhere.</h1>
+          <p>
+            Compare flights from Hong Kong to Paris, Rome, Lima and New Delhi.
+          </p>
+          <a class="text-link" href="#search-form"
+            >Find Your Flight <span aria-hidden="true">↘</span></a
+          >
         </div>
-
-        <!-- Confirmation -->
-        <div id="confirm-modal" class="modal hidden" aria-hidden="true">
-            <div class="modal-backdrop" data-close-confirm></div>
-            <div class="modal-panel confirm-panel" role="dialog">
-                <button type="button" class="modal-close" data-close-confirm aria-label="Close">&times;</button>
-                <div class="confirm-icon">✓</div>
-                <h2>Booking confirmed</h2>
-                <div id="confirm-details"></div>
-                <button type="button" class="btn" data-close-confirm>Done</button>
+        <figure>
+          <img
+            src="./image/optimized/booking-banner.webp"
+            alt="A view above the clouds from an aircraft window"
+            width="1600"
+            height="1063"
+            fetchpriority="high"
+            srcset="
+              ./image/optimized/booking-banner-800.webp  800w,
+              ./image/optimized/booking-banner.webp     1600w
+            "
+            sizes="(min-width: 1024px) 60vw, 100vw"
+          />
+        </figure>
+      </section>
+      <section class="booking-panel">
+        <form id="search-form" class="search-form">
+          <div class="search-heading">
+            <h2>Find your route.</h2>
+            <p>Departing from Hong Kong (HKG). Fares shown in HKD.</p>
+          </div>
+          <div class="form-row form-row-3">
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <select id="destination" name="destination" required>
+                <option value="">Select destination</option>
+                <option value="eiffel-tower">Paris (Eiffel Tower)</option>
+                <option value="colosseum">Rome (Colosseum)</option>
+                <option value="machu-picchu">Lima (Machu Picchu)</option>
+                <option value="taj-mahal">New Delhi (Taj Mahal)</option>
+              </select>
             </div>
+            <div class="form-group">
+              <label for="depart-date">Departure date</label>
+              <select id="depart-date" name="depart-date">
+                <option value="">Any available date</option>
+                <option value="2026-11-12">12 Nov 2026</option>
+                <option value="2026-11-13">13 Nov 2026</option>
+                <option value="2026-11-14">14 Nov 2026</option>
+                <option value="2026-11-15">15 Nov 2026</option>
+                <option value="2026-11-18">18 Nov 2026</option>
+                <option value="2026-11-19">19 Nov 2026</option>
+                <option value="2026-11-20">20 Nov 2026</option>
+                <option value="2026-11-22">22 Nov 2026</option>
+              </select>
+            </div>
+            <div class="form-group form-actions">
+              <label>&nbsp;</label>
+              <button type="submit" class="btn btn-search">
+                Search flights
+              </button>
+            </div>
+          </div>
+          <p class="demo-note">
+            Sample flights and bookings for demonstration. No payment or live
+            reservation is made.
+          </p>
+        </form>
+
+        <div id="loading-state" class="loading-state hidden" role="status">
+          <div class="loading-label">
+            <div
+              class="orb-loader"
+              data-orb-state="searching"
+              aria-hidden="true"
+            >
+              <span></span><span></span><span></span>
+            </div>
+            <div>
+              <p class="loading-title">Finding sample flights...</p>
+              <p class="loading-caption">Matching routes and cabin fares.</p>
+            </div>
+            <span class="loading-step" aria-hidden="true">1 / 3</span>
+          </div>
+          <span class="search-progress" aria-hidden="true"></span>
+          <div class="flight-skeleton" aria-hidden="true">
+            <div class="skeleton-route">
+              <span class="skeleton-line sk-airline"></span>
+              <div>
+                <span class="skeleton-airport"
+                  ><span class="skeleton-line sk-time"></span
+                  ><span class="skeleton-line sk-code"></span
+                ></span>
+                <span class="skeleton-line sk-path"></span>
+                <span class="skeleton-airport"
+                  ><span class="skeleton-line sk-time"></span
+                  ><span class="skeleton-line sk-code"></span
+                ></span>
+              </div>
+              <span class="skeleton-line sk-date"></span>
+            </div>
+            <div class="skeleton-fare">
+              <span class="skeleton-line sk-price"></span
+              ><span class="skeleton-line sk-hint"></span>
+            </div>
+            <div class="skeleton-fare">
+              <span class="skeleton-line sk-price"></span
+              ><span class="skeleton-line sk-hint"></span>
+            </div>
+            <div class="skeleton-fare">
+              <span class="skeleton-line sk-price"></span
+              ><span class="skeleton-line sk-hint"></span>
+            </div>
+          </div>
+          <div class="flight-skeleton" aria-hidden="true">
+            <div class="skeleton-route">
+              <span class="skeleton-line sk-airline"></span>
+              <div>
+                <span class="skeleton-airport"
+                  ><span class="skeleton-line sk-time"></span
+                  ><span class="skeleton-line sk-code"></span
+                ></span>
+                <span class="skeleton-line sk-path"></span>
+                <span class="skeleton-airport"
+                  ><span class="skeleton-line sk-time"></span
+                  ><span class="skeleton-line sk-code"></span
+                ></span>
+              </div>
+              <span class="skeleton-line sk-date"></span>
+            </div>
+            <div class="skeleton-fare">
+              <span class="skeleton-line sk-price"></span
+              ><span class="skeleton-line sk-hint"></span>
+            </div>
+            <div class="skeleton-fare">
+              <span class="skeleton-line sk-price"></span
+              ><span class="skeleton-line sk-hint"></span>
+            </div>
+            <div class="skeleton-fare">
+              <span class="skeleton-line sk-price"></span
+              ><span class="skeleton-line sk-hint"></span>
+            </div>
+          </div>
         </div>
+        <div
+          id="results-area"
+          class="results-area"
+          aria-live="polite"
+          aria-atomic="false"
+        >
+          <p class="results-placeholder">
+            Choose a destination and search to see available flights.
+          </p>
+        </div>
+      </section>
+
+      <div id="booking-modal" class="modal hidden" aria-hidden="true">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div
+          class="modal-panel"
+          role="dialog"
+          aria-labelledby="modal-title"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            class="modal-close"
+            data-close-modal
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <h2 id="modal-title">Complete your booking</h2>
+          <div id="modal-flight-summary" class="modal-summary"></div>
+          <form id="booking-form" class="booking-form">
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="passenger-name">Full name</label>
+                <input
+                  type="text"
+                  autocomplete="name"
+                  id="passenger-name"
+                  required
+                  placeholder="As on passport"
+                />
+              </div>
+              <div class="form-group">
+                <label for="passenger-email">Email</label>
+                <input
+                  type="email"
+                  autocomplete="email"
+                  id="passenger-email"
+                  required
+                  placeholder="example@example.com"
+                />
+              </div>
+            </div>
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="passengers">Passengers</label>
+                <select id="passengers" required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="passenger-phone">Phone (optional)</label>
+                <input
+                  type="tel"
+                  autocomplete="tel"
+                  id="passenger-phone"
+                  placeholder="+852 XXXX-XXXX"
+                />
+              </div>
+            </div>
+            <p class="form-note">
+              Please check your details carefully before confirming. A booking
+              reference will be issued after submission.
+            </p>
+            <button type="submit" class="btn btn-search">
+              Confirm booking
+            </button>
+          </form>
+          <div
+            id="booking-progress"
+            class="booking-progress hidden"
+            role="status"
+          >
+            <div
+              class="orb-loader"
+              data-orb-state="composing"
+              aria-hidden="true"
+            ></div>
+            <p class="progress-title">Creating your sample itinerary...</p>
+            <p class="loading-caption">Saving your selection on this device.</p>
+            <span class="search-progress" aria-hidden="true"></span>
+            <div class="confirmation-skeleton" aria-hidden="true">
+              <div>
+                <span class="skeleton-line sk-time"></span
+                ><span class="skeleton-line sk-time"></span>
+              </div>
+              <span class="skeleton-line sk-date"></span>
+              <span class="skeleton-line sk-airline"></span>
+              <span class="skeleton-line sk-hint"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="confirm-modal" class="modal hidden" aria-hidden="true">
+        <div class="modal-backdrop" data-close-confirm></div>
+        <div
+          class="modal-panel confirm-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="confirm-title"
+        >
+          <button
+            type="button"
+            class="modal-close"
+            data-close-confirm
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <div class="confirmation-heading">
+            <div class="confirm-icon" aria-hidden="true"></div>
+            <div>
+              <h2 id="confirm-title">Booking confirmed</h2>
+              <p class="confirm-intro">Your sample itinerary is ready.</p>
+            </div>
+          </div>
+          <div id="confirm-details"></div>
+          <p class="confirmation-note">
+            Demo booking only. No payment or live reservation.
+          </p>
+          <button type="button" class="btn" data-close-confirm>Done</button>
+        </div>
+      </div>
     </main>
-
+    <noscript
+      ><p class="no-results">
+        Enable JavaScript to search the sample flights and try the booking form.
+      </p></noscript
+    >
     <footer>
-        <div class="footer-inner">
-            <div class="footer-col">
-                <div class="footer-brand">Wanderlust <span>World</span></div>
-                <p>Inspiring journeys to the world’s most remarkable landmarks — with expert guides, seamless booking, and unforgettable experiences.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Destinations</h4>
-                <ul>
-                    <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-                    <li><a href="./colosseum.html">Colosseum</a></li>
-                    <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-                    <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./booking.html">Book Flights</a></li>
-                    <li><a href="./index.html#plan">Plan Your Trip</a></li>
-                </ul>
-            </div>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">Wanderlust <span>World</span></div>
+          <p>
+            Discover remarkable places through their history, culture and the
+            journeys that take you there.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <div class="footer-col">
+          <h3>Destinations</h3>
+          <ul>
+            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html">Colosseum</a></li>
+            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#destinations">Featured Places</a></li>
+            <li><a href="./booking.html">Book Flights</a></li>
+            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </footer>
-
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-    <script src="./data/tickets.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/booking.js"></script>
-</body>
+    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+      ↑
+    </button>
+    <script src="./js/vendor/gsap.min.js" defer></script>
+    <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="./js/vendor/thinking-orbs.min.js" defer></script>
+    <script src="./js/orbs.js?v=20261010-4" defer></script>
+    <script src="./js/script.js?v=20261010-4" defer></script>
+    <script src="./data/tickets.js" defer></script>
+    <script src="./js/booking.js?v=20261010-4" defer></script>
+  </body>
 </html>

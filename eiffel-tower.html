@@ -1,203 +1,544 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="History, travel tips, and visitor guide for the Eiffel Tower in Paris, France.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="History, travel tips, and visitor guide for the Eiffel Tower in Paris, France."
+    />
     <title>Eiffel Tower | Wanderlust World</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="nav-container">
-            <a href="./index.html" class="logo">
-                <img src="./image/wanderlust.png" alt="Wanderlust logo">
-                Wanderlust <span>World</span>
-            </a>
-            <div class="hamburger-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
-                <img src="./image/hamburger-menu.svg" alt="">
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./eiffel-tower.html" class="active">Eiffel Tower</a></li>
-                    <li><a href="./colosseum.html">Colosseum</a></li>
-                    <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-                    <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-                    <li><a href="./booking.html">Book Flights</a></li>
-                </ul>
-            </nav>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="./image/wanderlust.png" type="image/png" />
+
+    <link
+      rel="preload"
+      href="./image/optimized/eiffel-tower.webp"
+      as="image"
+      fetchpriority="high"
+      media="(min-width: 768px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./image/optimized/eiffel-tower-mobile.webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+    <script src="./js/theme.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+  </head>
+  <body id="top" class="page-eiffel-tower">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-container">
+        <a href="./index.html" class="logo"
+          ><img
+            src="./image/wanderlust.png"
+            alt="Wanderlust logo"
+            width="32"
+            height="32"
+          />Wanderlust <span>World</span></a
+        >
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li>
+              <a href="./eiffel-tower.html" class="active" aria-current="page"
+                >Eiffel Tower</a
+              >
+            </li>
+            <li><a href="./colosseum.html">Colosseum</a></li>
+            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./booking.html">Book Flights</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <img
+              class="theme-icon theme-icon-moon"
+              src="./image/icons/moon.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <img
+              class="theme-icon theme-icon-sun"
+              src="./image/icons/sun.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <span class="sr-only">Switch color theme</span>
+          </button>
+          <button
+            class="hamburger-btn"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="main-nav"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
         </div>
+      </div>
     </header>
-
-    <div class="attraction-banner" style="background-image: url('./image/eiffel-tower.jpg');">
-        <div class="banner-inner">
-            <span class="eyebrow">France · Paris</span>
-            <h1>Eiffel Tower</h1>
+    <main id="main-content">
+      <section
+        class="attraction-hero cinematic-hero"
+        aria-labelledby="attraction-title"
+      >
+        <div class="hero-media">
+          <picture
+            ><source
+              media="(max-width: 767px)"
+              srcset="./image/optimized/eiffel-tower-mobile.webp" />
+            <img
+              src="./image/optimized/eiffel-tower.webp"
+              alt="Eiffel Tower in France"
+              width="1600"
+              height="1067"
+              fetchpriority="high"
+              srcset="
+                ./image/optimized/eiffel-tower-800.webp  800w,
+                ./image/optimized/eiffel-tower.webp     1600w
+              "
+              sizes="100vw"
+          /></picture>
         </div>
-    </div>
+        <div class="hero-content">
+          <p class="hero-location">France · Paris</p>
+          <h1 id="attraction-title">Eiffel Tower</h1>
+          <p>A different view of Paris.</p>
+          <a class="btn btn-white" href="#history"
+            >Explore the history <span aria-hidden="true">↘</span></a
+          >
+        </div>
+      </section>
+      <div class="guide-layout container" id="history">
+        <article class="guide-story">
+          <h2>History of the Eiffel Tower</h2>
+          <p>
+            The Eiffel Tower is one of the most recognisable structures in the
+            world and the ultimate symbol of Paris and France. Standing on the
+            Champ de Mars, it was built as the centrepiece of the 1889
+            Exposition Universelle (World’s Fair), held to celebrate the 100th
+            anniversary of the French Revolution.
+          </p>
 
-    <main>
-        <div class="content-grid">
-            <div class="main-content">
-                <div class="reveal">
-                    <h2>History of the Eiffel Tower</h2>
-                    <p>The Eiffel Tower is one of the most recognisable structures in the world and the ultimate symbol of Paris and France. Standing on the Champ de Mars, it was built as the centrepiece of the 1889 Exposition Universelle (World’s Fair), held to celebrate the 100th anniversary of the French Revolution.</p>
+          <div class="history-block">
+            <h3>The Competition &amp; Design</h3>
+            <p>
+              In 1884, French engineer Gustave Eiffel and his company began
+              developing plans for a tall iron tower. The design was mainly
+              created by engineers Maurice Koechlin and Émile Nouguier, with
+              architectural improvements by Stephen Sauvestre. Eiffel’s proposal
+              was selected from more than 100 competition entries for the 1889
+              World’s Fair monument.
+            </p>
+          </div>
 
-                    <div class="history-block">
-                        <h3>The Competition &amp; Design</h3>
-                        <p>In 1884, French engineer Gustave Eiffel and his company began developing plans for a tall iron tower. The design was mainly created by engineers Maurice Koechlin and Émile Nouguier, with architectural improvements by Stephen Sauvestre. Eiffel’s proposal was selected from more than 100 competition entries for the 1889 World’s Fair monument.</p>
-                    </div>
+          <h3>Construction (1887-1889)</h3>
+          <p>
+            Construction started on 28 January 1887 and finished in just over
+            two years. The tower was assembled from more than 18,000 iron pieces
+            held together by 2.5 million rivets. At completion it was the
+            tallest man-made structure in the world at 300 metres, a record it
+            held until 1930.
+          </p>
+          <p>
+            Many Parisians initially disliked it. Artists and writers signed a
+            petition calling it a “useless and monstrous” structure. Gustave
+            Eiffel only had a 20-year permit; the tower was supposed to be
+            dismantled afterward. Its value as a radio transmission tower saved
+            it from destruction.
+          </p>
 
-                    <h3>Construction (1887–1889)</h3>
-                    <p>Construction started on 28 January 1887 and finished in just over two years. The tower was assembled from more than 18,000 iron pieces held together by 2.5 million rivets. At completion it was the tallest man-made structure in the world at 300 metres — a record it held until 1930.</p>
-                    <p>Many Parisians initially disliked it. Artists and writers signed a petition calling it a “useless and monstrous” structure. Gustave Eiffel only had a 20-year permit; the tower was supposed to be dismantled afterward. Its value as a radio transmission tower saved it from destruction.</p>
-
-                    <h3>From Temporary to Permanent Icon</h3>
-                    <p>During World War I the tower intercepted enemy radio communications. Over the 20th century it became the beloved landmark we know today. Lighting systems were added over the decades, and every evening the tower sparkles with thousands of lights. Nearly 7 million visitors come each year.</p>
-                </div>
-
-                <div class="reveal">
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <h4>Best Photo Spots</h4>
-                            <p>Trocadéro at sunset, Champ de Mars picnic lawns, and the Seine riverbanks for classic skyline shots.</p>
-                        </div>
-                        <div class="info-box">
-                            <h4>Nearby Highlights</h4>
-                            <p>Musée du Quai Branly, the Seine cruise piers, and the Champs de Mars gardens are all within walking distance.</p>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="reveal">
-                    <div class="carousel" data-carousel>
-                        <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <img src="./image/eiffel-tower.jpg" alt="Iron Lady of Paris">
-                            <div class="slide-caption">
-                                <h4>Iron Lady of Paris</h4>
-                                <p>Built for the 1889 World’s Fair and once criticised as an eyesore.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/eiffel-2.jpg" alt="Champ de Mars">
-                            <div class="slide-caption">
-                                <h4>Champ de Mars</h4>
-                                <p>The park at the tower’s feet is perfect for picnics and sunset views.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/eiffel-3.jpg" alt="Night Sparkle">
-                            <div class="slide-caption">
-                                <h4>Night Sparkle</h4>
-                                <p>After dark the tower lights up and sparkles on the hour.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/eiffel-4.jpg" alt="Seine Skyline">
-                            <div class="slide-caption">
-                                <h4>Seine Skyline</h4>
-                                <p>River cruises offer some of the best angles of the landmark.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/eiffel-5.jpg" alt="Visitor Favourite">
-                            <div class="slide-caption">
-                                <h4>Visitor Favourite</h4>
-                                <p>Around 7 million people visit every year — book tickets early.</p>
-                            </div>
-                        </div>
-                        </div>
-                        <button type="button" class="carousel-btn prev" aria-label="Previous slide">‹</button>
-                        <button type="button" class="carousel-btn next" aria-label="Next slide">›</button>
-                        <div class="carousel-dots"></div>
-                    </div>
-                    <div class="book-cta">
-                        <p><strong>Fly to Paris for the Eiffel Tower</strong> — search sample flights from Hong Kong.</p>
-                        <a href="./booking.html?to=eiffel-tower" class="btn">Book a flight</a>
-                    </div>
-                </div>
-
-                <div class="tips-section reveal">
-                    <h3>✈️ Travel Tips for Visitors</h3>
-                    <ul class="tips-list">
-                        <li><strong>Best time:</strong> Early morning or late evening for fewer crowds and beautiful lights. Avoid peak French school holidays if you can.</li>
-                        <li><strong>Tickets:</strong> Buy online from the official site in advance. Choose stairs or lift, and 2nd floor or summit access.</li>
-                        <li><strong>Getting there:</strong> Metro lines 6, 8 or 9 (Bir-Hakeim, École Militaire, Trocadéro). RER C also stops nearby.</li>
-                        <li><strong>Duration:</strong> Plan 1.5–3 hours depending on queues and whether you go to the top.</li>
-                        <li><strong>What to bring:</strong> Valid ID, comfortable shoes, and a light jacket — it can be windy at the summit.</li>
-                        <li><strong>Local tip:</strong> The free view from Trocadéro is excellent, especially when the tower sparkles on the hour after dark.</li>
-                    </ul>
-                </div>
-
-                <div class="video-section reveal">
-                    <h3>📺 Watch a Video about the Eiffel Tower</h3>
-                    <p>Learn more about this landmark with the documentary below:</p>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/xas7g5VvIRo" title="Eiffel Tower Documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+          <h3>From Temporary to Permanent Icon</h3>
+          <p>
+            During World War I the tower intercepted enemy radio communications.
+            Over the 20th century it became the beloved landmark we know today.
+            Lighting systems were added over the decades, and every evening the
+            tower sparkles with thousands of lights. Nearly 7 million visitors
+            come each year.
+          </p>
+        </article>
+        <aside class="guide-facts">
+          <div class="facts-heading">
+            <h2>Quick Facts</h2>
+          </div>
+          <ul
+            class="fact-list"
+            id="facts-list"
+            tabindex="0"
+            aria-label="Quick facts"
+          >
+            <li><strong>Country</strong>France</li>
+            <li><strong>City</strong>Paris</li>
+            <li><strong>Built</strong>1887 - 1889</li>
+            <li><strong>Height</strong>330 m (with antennas)</li>
+            <li><strong>Designer</strong>Gustave Eiffel &amp; team</li>
+            <li><strong>Material</strong>Wrought iron</li>
+            <li><strong>Original Purpose</strong>1889 World’s Fair</li>
+            <li><strong>Visitors / Year</strong>≈ 7 million</li>
+          </ul>
+        </aside>
+      </div>
+      <section
+        class="guide-highlights container"
+        aria-label="Visitor highlights"
+      >
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Best Photo Spots</h4>
+            <p>
+              Trocadéro at sunset, Champ de Mars picnic lawns, and the Seine
+              riverbanks for classic skyline shots.
+            </p>
+          </div>
+          <div class="info-box">
+            <h4>Nearby Highlights</h4>
+            <p>
+              Musée du Quai Branly, the Seine cruise piers, and the Champs de
+              Mars gardens are all within walking distance.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="photo-section"
+        data-gallery
+        aria-label="Eiffel Tower photo gallery"
+      >
+        <div class="gallery-toolbar container">
+          <h2>A closer look.</h2>
+          <div class="gallery-controls">
+            <span class="gallery-count" aria-live="polite">1 / 5</span
+            ><button
+              type="button"
+              class="gallery-prev"
+              aria-label="Previous photograph"
+            >
+              ←</button
+            ><button
+              type="button"
+              class="gallery-next"
+              aria-label="Next photograph"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <div
+          class="gallery-viewport"
+          tabindex="0"
+          aria-label="Photographs, use arrow keys to browse"
+        >
+          <div class="gallery-track">
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/eiffel-tower.webp"
+                alt="Iron Lady of Paris"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/eiffel-tower-800.webp  800w,
+                  ./image/optimized/eiffel-tower.webp     1600w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Iron Lady of Paris</h4>
+                <p>
+                  Built for the 1889 World’s Fair and once criticised as an
+                  eyesore.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/eiffel-2.webp"
+                alt="Champ de Mars"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/eiffel-2-800.webp  800w,
+                  ./image/optimized/eiffel-2.webp     1067w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Champ de Mars</h4>
+                <p>
+                  The park at the tower’s feet is perfect for picnics and sunset
+                  views.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/eiffel-3.webp"
+                alt="Night Sparkle"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/eiffel-3-800.webp  800w,
+                  ./image/optimized/eiffel-3.webp     1200w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Night Sparkle</h4>
+                <p>After dark the tower lights up and sparkles on the hour.</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/eiffel-4.webp"
+                alt="Seine Skyline"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/eiffel-4-800.webp  800w,
+                  ./image/optimized/eiffel-4.webp     1200w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Seine Skyline</h4>
+                <p>
+                  River cruises offer some of the best angles of the landmark.
+                </p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/eiffel-5.webp"
+                alt="Visitor Favourite"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/eiffel-5-800.webp  800w,
+                  ./image/optimized/eiffel-5.webp     1067w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Visitor Favourite</h4>
+                <p>
+                  Around 7 million people visit every year, book tickets early.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <div class="guide-practical container">
+        <div class="book-cta">
+          <p>
+            <strong>Fly to Paris for the Eiffel Tower</strong>Search sample
+            flights from Hong Kong.
+          </p>
+          <a href="./booking.html?to=eiffel-tower" class="btn">Book a flight</a>
+        </div>
+        <div class="tips-section reveal">
+          <h3>Travel Tips for Visitors</h3>
+          <ul class="tips-list">
+            <li>
+              <strong>Best time:</strong> Early morning or late evening for
+              fewer crowds and beautiful lights. Avoid peak French school
+              holidays if you can.
+            </li>
+            <li>
+              <strong>Tickets:</strong> Buy online from the official site in
+              advance. Choose stairs or lift, and 2nd floor or summit access.
+            </li>
+            <li>
+              <strong>Getting there:</strong> Metro lines 6, 8 or 9 (Bir-Hakeim,
+              École Militaire, Trocadéro). RER C also stops nearby.
+            </li>
+            <li>
+              <strong>Duration:</strong> Plan 1.5-3 hours depending on queues
+              and whether you go to the top.
+            </li>
+            <li>
+              <strong>What to bring:</strong> Valid ID, comfortable shoes, and a
+              light jacket, it can be windy at the summit.
+            </li>
+            <li>
+              <strong>Local tip:</strong> The free view from Trocadéro is
+              excellent, especially when the tower sparkles on the hour after
+              dark.
+            </li>
+          </ul>
+        </div>
+        <div class="video-section reveal">
+          <h3>Watch a Video about the Eiffel Tower</h3>
+          <p>Learn more about this landmark with the documentary below:</p>
+          <div class="video-container">
+            <button
+              class="video-poster"
+              type="button"
+              aria-label="Play the documentary"
+            >
+              <img
+                src="./image/optimized/eiffel-tower-800.webp"
+                alt=""
+                width="800"
+                height="530"
+                loading="lazy"
+              /><span>▶ Play documentary</span>
+            </button>
+            <div class="embed-loading" hidden role="status">
+              <div class="orb-loader" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p>Loading the documentary...</p>
+              <a
+                class="embed-fallback text-link"
+                href="https://www.youtube.com/watch?v=xas7g5VvIRo"
+                target="_blank"
+                rel="noopener"
+                hidden
+                >Open on YouTube ↗</a
+              >
             </div>
-
-            <aside class="sidebar">
-                <div class="sidebar-card reveal">
-                    <h3>Quick Facts</h3>
-                    <ul class="fact-list">
-                        <li><strong>Country</strong>France</li>
-                        <li><strong>City</strong>Paris</li>
-                        <li><strong>Built</strong>1887 – 1889</li>
-                        <li><strong>Height</strong>330 m (with antennas)</li>
-                        <li><strong>Designer</strong>Gustave Eiffel &amp; team</li>
-                        <li><strong>Material</strong>Wrought iron</li>
-                        <li><strong>Original Purpose</strong>1889 World’s Fair</li>
-                        <li><strong>Visitors / Year</strong>≈ 7 million</li>
-                    </ul>
-                </div>
-                <div class="sidebar-card reveal">
-                    <h3>More Destinations</h3>
-                    <ul class="related-list">
-                        <li><a href="./colosseum.html"><img src="./image/colosseum.jpg" alt="">Colosseum</a></li>
-                        <li><a href="./machu-picchu.html"><img src="./image/machu-picchu.jpg" alt="">Machu Picchu</a></li>
-                        <li><a href="./taj-mahal.html"><img src="./image/taj-mahal.jpg" alt="">Taj Mahal</a></li>
-                    </ul>
-                </div>
-            </aside>
+            <iframe
+              hidden
+              data-src="https://www.youtube.com/embed/xas7g5VvIRo"
+              title="Eiffel Tower Documentary"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+              loading="lazy"
+              width="960"
+              height="540"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe
+            ><noscript
+              ><iframe
+                src="https://www.youtube.com/embed/xas7g5VvIRo"
+                title="Eiffel Tower Documentary"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+                loading="lazy"
+                width="960"
+                height="540"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe
+            ></noscript>
+          </div>
         </div>
+      </div>
+      <section class="more-destinations container">
+        <h2>Where next?</h2>
+        <ul class="related-list">
+          <li>
+            <a href="./colosseum.html"
+              ><img
+                src="./image/optimized/colosseum.webp"
+                alt=""
+                srcset="
+                  ./image/optimized/colosseum-800.webp  800w,
+                  ./image/optimized/colosseum.webp     1600w
+                "
+                sizes="(min-width: 1024px) 60vw, 100vw"
+              />Colosseum</a
+            >
+          </li>
+          <li>
+            <a href="./machu-picchu.html"
+              ><img
+                src="./image/optimized/machu-picchu.webp"
+                alt=""
+                srcset="
+                  ./image/optimized/machu-picchu-800.webp  800w,
+                  ./image/optimized/machu-picchu.webp     1600w
+                "
+                sizes="(min-width: 1024px) 60vw, 100vw"
+              />Machu Picchu</a
+            >
+          </li>
+          <li>
+            <a href="./taj-mahal.html"
+              ><img
+                src="./image/optimized/taj-mahal.webp"
+                alt=""
+                srcset="
+                  ./image/optimized/taj-mahal-800.webp  800w,
+                  ./image/optimized/taj-mahal.webp     1600w
+                "
+                sizes="(min-width: 1024px) 60vw, 100vw"
+              />Taj Mahal</a
+            >
+          </li>
+        </ul>
+      </section>
     </main>
-
     <footer>
-        <div class="footer-inner">
-            <div class="footer-col">
-                <div class="footer-brand">Wanderlust <span>World</span></div>
-                <p>Inspiring journeys to the world’s most remarkable landmarks — with expert guides, seamless booking, and unforgettable experiences.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Destinations</h4>
-                <ul>
-                    <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-                    <li><a href="./colosseum.html">Colosseum</a></li>
-                    <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-                    <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./index.html#destinations">Featured Places</a></li>
-                    <li><a href="./booking.html">Book Flights</a></li>
-                    <li><a href="./index.html#plan">Plan Your Trip</a></li>
-                </ul>
-            </div>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">Wanderlust <span>World</span></div>
+          <p>
+            Discover remarkable places through their history, culture and the
+            journeys that take you there.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <div class="footer-col">
+          <h3>Destinations</h3>
+          <ul>
+            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html">Colosseum</a></li>
+            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#destinations">Featured Places</a></li>
+            <li><a href="./booking.html">Book Flights</a></li>
+            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </footer>
-
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-    <script src="./js/script.js"></script>
-</body>
+    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+      ↑
+    </button>
+    <script src="./js/vendor/gsap.min.js" defer></script>
+    <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="./js/vendor/thinking-orbs.min.js" defer></script>
+    <script src="./js/orbs.js?v=20261010-4" defer></script>
+    <script src="./js/script.js?v=20261010-4" defer></script>
+  </body>
 </html>

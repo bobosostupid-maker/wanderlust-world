@@ -1,205 +1,531 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="History, travel tips, and visitor guide for the Colosseum in Rome, Italy.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="History, travel tips, and visitor guide for the Colosseum in Rome, Italy."
+    />
     <title>Colosseum | Wanderlust World</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="nav-container">
-            <a href="./index.html" class="logo">
-                <img src="./image/wanderlust.png" alt="Wanderlust logo">
-                Wanderlust <span>World</span>
-            </a>
-            <div class="hamburger-btn" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
-                <img src="./image/hamburger-menu.svg" alt="">
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-                    <li><a href="./colosseum.html" class="active">Colosseum</a></li>
-                    <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-                    <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-                    <li><a href="./booking.html">Book Flights</a></li>
-                </ul>
-            </nav>
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="./image/wanderlust.png" type="image/png" />
+
+    <link
+      rel="preload"
+      href="./image/optimized/colosseum.webp"
+      as="image"
+      fetchpriority="high"
+      media="(min-width: 768px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./image/optimized/colosseum-mobile.webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+    <script src="./js/theme.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+  </head>
+  <body id="top" class="page-colosseum">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-container">
+        <a href="./index.html" class="logo"
+          ><img
+            src="./image/wanderlust.png"
+            alt="Wanderlust logo"
+            width="32"
+            height="32"
+          />Wanderlust <span>World</span></a
+        >
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
+            <li>
+              <a href="./colosseum.html" class="active" aria-current="page"
+                >Colosseum</a
+              >
+            </li>
+            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./booking.html">Book Flights</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            title="Switch color theme"
+          >
+            <img
+              class="theme-icon theme-icon-moon"
+              src="./image/icons/moon.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <img
+              class="theme-icon theme-icon-sun"
+              src="./image/icons/sun.svg"
+              alt=""
+              width="18"
+              height="18"
+            />
+            <span class="sr-only">Switch color theme</span>
+          </button>
+          <button
+            class="hamburger-btn"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="main-nav"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
         </div>
+      </div>
     </header>
-
-    <div class="attraction-banner" style="background-image: url('./image/colosseum.jpg');">
-        <div class="banner-inner">
-            <span class="eyebrow">Italy · Rome</span>
-            <h1>Colosseum</h1>
+    <main id="main-content">
+      <section
+        class="attraction-hero cinematic-hero"
+        aria-labelledby="attraction-title"
+      >
+        <div class="hero-media">
+          <picture
+            ><source
+              media="(max-width: 767px)"
+              srcset="./image/optimized/colosseum-mobile.webp" />
+            <img
+              src="./image/optimized/colosseum.webp"
+              alt="Colosseum in Italy"
+              width="1600"
+              height="1067"
+              fetchpriority="high"
+              srcset="
+                ./image/optimized/colosseum-800.webp  800w,
+                ./image/optimized/colosseum.webp     1600w
+              "
+              sizes="100vw"
+          /></picture>
         </div>
-    </div>
+        <div class="hero-content">
+          <p class="hero-location">Italy · Rome</p>
+          <h1 id="attraction-title">Colosseum</h1>
+          <p>Walk into ancient Rome.</p>
+          <a class="btn btn-white" href="#history"
+            >Explore the history <span aria-hidden="true">↘</span></a
+          >
+        </div>
+      </section>
+      <div class="guide-layout container" id="history">
+        <article class="guide-story">
+          <h2>History of the Colosseum</h2>
+          <p>
+            The Colosseum, also known as the Flavian Amphitheatre, is the
+            largest amphitheatre ever built and one of the greatest works of
+            Roman engineering. Located in the heart of Rome, it remains a
+            powerful symbol of the Roman Empire.
+          </p>
 
-    <main>
-        <div class="content-grid">
-            <div class="main-content">
-                <div class="reveal">
-                    <h2>History of the Colosseum</h2>
-                    <p>The Colosseum, also known as the Flavian Amphitheatre, is the largest amphitheatre ever built and one of the greatest works of Roman engineering. Located in the heart of Rome, it remains a powerful symbol of the Roman Empire.</p>
+          <div class="history-block">
+            <h3>Construction under the Flavians</h3>
+            <p>
+              Construction began around 70-72 AD under Emperor Vespasian. It was
+              completed in 80 AD under his son Titus, and later modified under
+              Domitian. The amphitheatre was built on the site of Nero’s private
+              lake, returning the land to public use and winning popular support
+              for the new dynasty.
+            </p>
+          </div>
 
-                    <div class="history-block">
-                        <h3>Construction under the Flavians</h3>
-                        <p>Construction began around 70–72 AD under Emperor Vespasian. It was completed in 80 AD under his son Titus, and later modified under Domitian. The amphitheatre was built on the site of Nero’s private lake, returning the land to public use and winning popular support for the new dynasty.</p>
-                    </div>
+          <h3>Design and Capacity</h3>
+          <p>
+            The Colosseum could hold an estimated 50,000 to 80,000 spectators. A
+            complex system of vaults, corridors, and staircases allowed crowds
+            to enter and exit efficiently. Beneath the arena lay the hypogeum,
+            an underground network housing animals, gladiators, and stage
+            machinery.
+          </p>
 
-                    <h3>Design and Capacity</h3>
-                    <p>The Colosseum could hold an estimated 50,000 to 80,000 spectators. A complex system of vaults, corridors, and staircases allowed crowds to enter and exit efficiently. Beneath the arena lay the hypogeum — an underground network housing animals, gladiators, and stage machinery.</p>
+          <h3>Games and Spectacles</h3>
+          <p>
+            For centuries it hosted gladiatorial contests, animal hunts, public
+            executions, and even mock naval battles in its early years. Events
+            were free to the public and served as both entertainment and
+            political propaganda.
+          </p>
 
-                    <h3>Games and Spectacles</h3>
-                    <p>For centuries it hosted gladiatorial contests, animal hunts, public executions, and even mock naval battles in its early years. Events were free to the public and served as both entertainment and political propaganda.</p>
-
-                    <h3>Later Centuries</h3>
-                    <p>After the fall of the Western Roman Empire, the Colosseum suffered neglect, earthquakes, and stone-robbing. In the Middle Ages it was used as housing, workshops, and a fortress. Modern restoration and conservation have protected the monument. It became a UNESCO World Heritage Site in 1980 as part of the Historic Centre of Rome.</p>
-                </div>
-
-                <div class="reveal">
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <h4>Best Photo Spots</h4>
-                            <p>The exterior arches at golden hour, the view from Via dei Fori Imperiali, and upper-tier arena overlooks if your ticket allows.</p>
-                        </div>
-                        <div class="info-box">
-                            <h4>Nearby Highlights</h4>
-                            <p>Roman Forum, Palatine Hill, and the Arch of Constantine are steps away — ideal as a combined half-day visit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="reveal">
-                    <div class="carousel" data-carousel>
-                        <div class="carousel-track">
-                        <div class="carousel-slide">
-                            <img src="./image/colosseum.jpg" alt="Flavian Amphitheatre">
-                            <div class="slide-caption">
-                                <h4>Flavian Amphitheatre</h4>
-                                <p>Completed in 80 AD under Emperor Titus for public games.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/colosseum-2.jpg" alt="Iconic Arches">
-                            <div class="slide-caption">
-                                <h4>Iconic Arches</h4>
-                                <p>Three tiers of arches defined Roman engineering ambition.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/colosseum-3.jpg" alt="Heart of Rome">
-                            <div class="slide-caption">
-                                <h4>Heart of Rome</h4>
-                                <p>The Colosseum still anchors the city’s historic centre.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/colosseum-4.jpg" alt="Underground Hypogeum">
-                            <div class="slide-caption">
-                                <h4>Underground Hypogeum</h4>
-                                <p>A maze of tunnels once held gladiators and wild animals.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./image/colosseum-5.jpg" alt="Forum Views">
-                            <div class="slide-caption">
-                                <h4>Forum Views</h4>
-                                <p>Pair your visit with the Roman Forum and Palatine Hill.</p>
-                            </div>
-                        </div>
-                        </div>
-                        <button type="button" class="carousel-btn prev" aria-label="Previous slide">‹</button>
-                        <button type="button" class="carousel-btn next" aria-label="Next slide">›</button>
-                        <div class="carousel-dots"></div>
-                    </div>
-                    <div class="book-cta">
-                        <p><strong>Fly to Rome for the Colosseum</strong> — search sample flights from Hong Kong.</p>
-                        <a href="./booking.html?to=colosseum" class="btn">Book a flight</a>
-                    </div>
-                </div>
-
-                <div class="tips-section reveal">
-                    <h3>✈️ Travel Tips for Visitors</h3>
-                    <ul class="tips-list">
-                        <li><strong>Best time:</strong> Early morning or late afternoon. Spring and autumn offer the most pleasant weather.</li>
-                        <li><strong>Tickets:</strong> Buy online in advance. Combined tickets with the Roman Forum and Palatine Hill offer better value.</li>
-                        <li><strong>Getting there:</strong> Colosseo metro station (Line B) is right beside the monument.</li>
-                        <li><strong>Duration:</strong> Allow 1.5–3 hours; longer if you join a guided tour or visit underground areas.</li>
-                        <li><strong>What to bring:</strong> Comfortable shoes, water, sun protection, and a light layer for cooler months.</li>
-                        <li><strong>Local tip:</strong> A guided tour or audio guide makes the ruins far more meaningful than walking alone.</li>
-                    </ul>
-                </div>
-
-                <div class="video-section reveal">
-                    <h3>📺 Watch a Video about the Colosseum</h3>
-                    <p>Learn more about this landmark with the documentary below:</p>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/lxUuufuUEiU" title="Colosseum Documentary" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+          <h3>Later Centuries</h3>
+          <p>
+            After the fall of the Western Roman Empire, the Colosseum suffered
+            neglect, earthquakes, and stone-robbing. In the Middle Ages it was
+            used as housing, workshops, and a fortress. Modern restoration and
+            conservation have protected the monument. It became a UNESCO World
+            Heritage Site in 1980 as part of the Historic Centre of Rome.
+          </p>
+        </article>
+        <aside class="guide-facts">
+          <div class="facts-heading">
+            <h2>Quick Facts</h2>
+          </div>
+          <ul
+            class="fact-list"
+            id="facts-list"
+            tabindex="0"
+            aria-label="Quick facts"
+          >
+            <li><strong>Country</strong>Italy</li>
+            <li><strong>City</strong>Rome</li>
+            <li><strong>Built</strong>70-80 AD</li>
+            <li><strong>Capacity</strong>50,000 - 80,000</li>
+            <li><strong>Original Name</strong>Flavian Amphitheatre</li>
+            <li><strong>Height</strong>≈ 48 metres</li>
+            <li><strong>UNESCO Status</strong>World Heritage (1980)</li>
+            <li><strong>Main Purpose</strong>Games &amp; spectacles</li>
+          </ul>
+        </aside>
+      </div>
+      <section
+        class="guide-highlights container"
+        aria-label="Visitor highlights"
+      >
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Best Photo Spots</h4>
+            <p>
+              The exterior arches at golden hour, the view from Via dei Fori
+              Imperiali, and upper-tier arena overlooks if your ticket allows.
+            </p>
+          </div>
+          <div class="info-box">
+            <h4>Nearby Highlights</h4>
+            <p>
+              Roman Forum, Palatine Hill, and the Arch of Constantine are steps
+              away, ideal as a combined half-day visit.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="photo-section"
+        data-gallery
+        aria-label="Colosseum photo gallery"
+      >
+        <div class="gallery-toolbar container">
+          <h2>A closer look.</h2>
+          <div class="gallery-controls">
+            <span class="gallery-count" aria-live="polite">1 / 5</span
+            ><button
+              type="button"
+              class="gallery-prev"
+              aria-label="Previous photograph"
+            >
+              ←</button
+            ><button
+              type="button"
+              class="gallery-next"
+              aria-label="Next photograph"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <div
+          class="gallery-viewport"
+          tabindex="0"
+          aria-label="Photographs, use arrow keys to browse"
+        >
+          <div class="gallery-track">
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/colosseum.webp"
+                alt="Flavian Amphitheatre"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/colosseum-800.webp  800w,
+                  ./image/optimized/colosseum.webp     1600w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Flavian Amphitheatre</h4>
+                <p>Completed in 80 AD under Emperor Titus for public games.</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/colosseum-2.webp"
+                alt="Iconic Arches"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/colosseum-2-800.webp  800w,
+                  ./image/optimized/colosseum-2.webp     1200w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Iconic Arches</h4>
+                <p>Three tiers of arches defined Roman engineering ambition.</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/colosseum-3.webp"
+                alt="Heart of Rome"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/colosseum-3-800.webp  800w,
+                  ./image/optimized/colosseum-3.webp     1200w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Heart of Rome</h4>
+                <p>The Colosseum still anchors the city’s historic centre.</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/colosseum-4.webp"
+                alt="Underground Hypogeum"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/colosseum-4-800.webp  800w,
+                  ./image/optimized/colosseum-4.webp     1200w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Underground Hypogeum</h4>
+                <p>A maze of tunnels once held gladiators and wild animals.</p>
+              </figcaption>
+            </figure>
+            <figure class="gallery-slide">
+              <img
+                src="./image/optimized/colosseum-5.webp"
+                alt="Forum Views"
+                loading="lazy"
+                width="1200"
+                height="800"
+                srcset="
+                  ./image/optimized/colosseum-5-800.webp  800w,
+                  ./image/optimized/colosseum-5.webp     1200w
+                "
+                sizes="(min-width: 1024px) 76vw, 100vw"
+              />
+              <figcaption>
+                <h4>Forum Views</h4>
+                <p>Pair your visit with the Roman Forum and Palatine Hill.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <div class="guide-practical container">
+        <div class="book-cta">
+          <p>
+            <strong>Fly to Rome for the Colosseum</strong>Search sample flights
+            from Hong Kong.
+          </p>
+          <a href="./booking.html?to=colosseum" class="btn">Book a flight</a>
+        </div>
+        <div class="tips-section reveal">
+          <h3>Travel Tips for Visitors</h3>
+          <ul class="tips-list">
+            <li>
+              <strong>Best time:</strong> Early morning or late afternoon.
+              Spring and autumn offer the most pleasant weather.
+            </li>
+            <li>
+              <strong>Tickets:</strong> Buy online in advance. Combined tickets
+              with the Roman Forum and Palatine Hill offer better value.
+            </li>
+            <li>
+              <strong>Getting there:</strong> Colosseo metro station (Line B) is
+              right beside the monument.
+            </li>
+            <li>
+              <strong>Duration:</strong> Allow 1.5-3 hours; longer if you join a
+              guided tour or visit underground areas.
+            </li>
+            <li>
+              <strong>What to bring:</strong> Comfortable shoes, water, sun
+              protection, and a light layer for cooler months.
+            </li>
+            <li>
+              <strong>Local tip:</strong> A guided tour or audio guide makes the
+              ruins far more meaningful than walking alone.
+            </li>
+          </ul>
+        </div>
+        <div class="video-section reveal">
+          <h3>Watch a Video about the Colosseum</h3>
+          <p>Learn more about this landmark with the documentary below:</p>
+          <div class="video-container">
+            <button
+              class="video-poster"
+              type="button"
+              aria-label="Play the documentary"
+            >
+              <img
+                src="./image/optimized/colosseum-800.webp"
+                alt=""
+                width="800"
+                height="530"
+                loading="lazy"
+              /><span>▶ Play documentary</span>
+            </button>
+            <div class="embed-loading" hidden role="status">
+              <div class="orb-loader" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p>Loading the documentary...</p>
+              <a
+                class="embed-fallback text-link"
+                href="https://www.youtube.com/watch?v=lxUuufuUEiU"
+                target="_blank"
+                rel="noopener"
+                hidden
+                >Open on YouTube ↗</a
+              >
             </div>
-
-            <aside class="sidebar">
-                <div class="sidebar-card reveal">
-                    <h3>Quick Facts</h3>
-                    <ul class="fact-list">
-                        <li><strong>Country</strong>Italy</li>
-                        <li><strong>City</strong>Rome</li>
-                        <li><strong>Built</strong>70–80 AD</li>
-                        <li><strong>Capacity</strong>50,000 – 80,000</li>
-                        <li><strong>Original Name</strong>Flavian Amphitheatre</li>
-                        <li><strong>Height</strong>≈ 48 metres</li>
-                        <li><strong>UNESCO Status</strong>World Heritage (1980)</li>
-                        <li><strong>Main Purpose</strong>Games &amp; spectacles</li>
-                    </ul>
-                </div>
-                <div class="sidebar-card reveal">
-                    <h3>More Destinations</h3>
-                    <ul class="related-list">
-                        <li><a href="./eiffel-tower.html"><img src="./image/eiffel-tower.jpg" alt="">Eiffel Tower</a></li>
-                        <li><a href="./machu-picchu.html"><img src="./image/machu-picchu.jpg" alt="">Machu Picchu</a></li>
-                        <li><a href="./taj-mahal.html"><img src="./image/taj-mahal.jpg" alt="">Taj Mahal</a></li>
-                    </ul>
-                </div>
-            </aside>
+            <iframe
+              hidden
+              data-src="https://www.youtube.com/embed/lxUuufuUEiU"
+              title="Colosseum Documentary"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+              "
+              allowfullscreen
+              loading="lazy"
+              width="960"
+              height="540"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe
+            ><noscript
+              ><iframe
+                src="https://www.youtube.com/embed/lxUuufuUEiU"
+                title="Colosseum Documentary"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+                loading="lazy"
+                width="960"
+                height="540"
+                referrerpolicy="strict-origin-when-cross-origin"
+              ></iframe
+            ></noscript>
+          </div>
         </div>
+      </div>
+      <section class="more-destinations container">
+        <h2>Where next?</h2>
+        <ul class="related-list">
+          <li>
+            <a href="./eiffel-tower.html"
+              ><img
+                src="./image/optimized/eiffel-tower.webp"
+                alt=""
+                srcset="
+                  ./image/optimized/eiffel-tower-800.webp  800w,
+                  ./image/optimized/eiffel-tower.webp     1600w
+                "
+                sizes="(min-width: 1024px) 60vw, 100vw"
+              />Eiffel Tower</a
+            >
+          </li>
+          <li>
+            <a href="./machu-picchu.html"
+              ><img
+                src="./image/optimized/machu-picchu.webp"
+                alt=""
+                srcset="
+                  ./image/optimized/machu-picchu-800.webp  800w,
+                  ./image/optimized/machu-picchu.webp     1600w
+                "
+                sizes="(min-width: 1024px) 60vw, 100vw"
+              />Machu Picchu</a
+            >
+          </li>
+          <li>
+            <a href="./taj-mahal.html"
+              ><img
+                src="./image/optimized/taj-mahal.webp"
+                alt=""
+                srcset="
+                  ./image/optimized/taj-mahal-800.webp  800w,
+                  ./image/optimized/taj-mahal.webp     1600w
+                "
+                sizes="(min-width: 1024px) 60vw, 100vw"
+              />Taj Mahal</a
+            >
+          </li>
+        </ul>
+      </section>
     </main>
-
     <footer>
-        <div class="footer-inner">
-            <div class="footer-col">
-                <div class="footer-brand">Wanderlust <span>World</span></div>
-                <p>Inspiring journeys to the world’s most remarkable landmarks — with expert guides, seamless booking, and unforgettable experiences.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Destinations</h4>
-                <ul>
-                    <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-                    <li><a href="./colosseum.html">Colosseum</a></li>
-                    <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-                    <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./index.html#destinations">Featured Places</a></li>
-                    <li><a href="./booking.html">Book Flights</a></li>
-                    <li><a href="./index.html#plan">Plan Your Trip</a></li>
-                </ul>
-            </div>
+      <div class="footer-inner">
+        <div class="footer-col">
+          <div class="footer-brand">Wanderlust <span>World</span></div>
+          <p>
+            Discover remarkable places through their history, culture and the
+            journeys that take you there.
+          </p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <div class="footer-col">
+          <h3>Destinations</h3>
+          <ul>
+            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html">Colosseum</a></li>
+            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#destinations">Featured Places</a></li>
+            <li><a href="./booking.html">Book Flights</a></li>
+            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </footer>
-
-    <button class="back-to-top" aria-label="Back to top">↑</button>
-    <script src="./js/script.js"></script>
-</body>
+    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+      ↑
+    </button>
+    <script src="./js/vendor/gsap.min.js" defer></script>
+    <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="./js/vendor/thinking-orbs.min.js" defer></script>
+    <script src="./js/orbs.js?v=20261010-4" defer></script>
+    <script src="./js/script.js?v=20261010-4" defer></script>
+  </body>
 </html>
