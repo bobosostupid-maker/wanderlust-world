@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="History, travel tips, and visitor guide for the Eiffel Tower in Paris, France."
+      content="History, travel tips, and visitor guide for the Eiffel Tower in Paris, France." data-i18n-attr="content:eiffel.metaDescription"
     />
-    <title>Eiffel Tower | Wanderlust World</title>
+    <title data-i18n="eiffel.metaTitle">Eiffel Tower | Wanderlust World</title>
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="./image/wanderlust.png" type="image/png" />
 
@@ -26,35 +26,54 @@
       fetchpriority="high"
     />
     <script src="./js/theme.js"></script>
-    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+    <script src="./js/lang.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-6" />
   </head>
   <body id="top" class="page-eiffel-tower">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="nav-container">
         <a href="./index.html" class="logo"
           ><img
             src="./image/wanderlust.png"
-            alt="Wanderlust logo"
+            alt="Wanderlust logo" data-i18n-attr="alt:common.logoAlt"
             width="32"
             height="32"
           />Wanderlust <span>World</span></a
         >
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main">
           <ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
             <li>
               <a href="./eiffel-tower.html" class="active" aria-current="page"
-                >Eiffel Tower</a
+                 data-i18n="nav.eiffel">Eiffel Tower</a
               >
             </li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-            <li><a href="./booking.html">Book Flights</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
           </ul>
         </nav>
         <div class="header-actions">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:lang.group"
+          >
+            <button type="button" data-set-lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button
+              type="button"
+              data-set-lang="zh-HK"
+              lang="zh-HK"
+              aria-pressed="false"
+            >
+              繁
+            </button>
+          </div>
           <button
             class="theme-toggle"
             type="button"
@@ -80,7 +99,7 @@
           <button
             class="hamburger-btn"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Open navigation" data-i18n-attr="aria-label:nav.open"
             aria-controls="main-nav"
             aria-expanded="false"
           >
@@ -101,7 +120,7 @@
               srcset="./image/optimized/eiffel-tower-mobile.webp" />
             <img
               src="./image/optimized/eiffel-tower.webp"
-              alt="Eiffel Tower in France"
+              alt="Eiffel Tower in France" data-i18n-attr="alt:eiffel.heroAlt"
               width="1600"
               height="1067"
               fetchpriority="high"
@@ -113,18 +132,18 @@
           /></picture>
         </div>
         <div class="hero-content">
-          <p class="hero-location">France · Paris</p>
-          <h1 id="attraction-title">Eiffel Tower</h1>
-          <p>A different view of Paris.</p>
+          <p class="hero-location" data-i18n="place.franceParis">France · Paris</p>
+          <h1 id="attraction-title" data-i18n="nav.eiffel">Eiffel Tower</h1>
+          <p data-i18n="home.eiffelTitle">A different view of Paris.</p>
           <a class="btn btn-white" href="#history"
-            >Explore the history <span aria-hidden="true">↘</span></a
+            ><span data-i18n="guide.exploreHistory">Explore the history</span> <span aria-hidden="true">↘</span></a
           >
         </div>
       </section>
       <div class="guide-layout container" id="history">
         <article class="guide-story">
-          <h2>History of the Eiffel Tower</h2>
-          <p>
+          <h2 data-i18n="eiffel.historyTitle">History of the Eiffel Tower</h2>
+          <p data-i18n="eiffel.intro">
             The Eiffel Tower is one of the most recognisable structures in the
             world and the ultimate symbol of Paris and France. Standing on the
             Champ de Mars, it was built as the centrepiece of the 1889
@@ -133,8 +152,8 @@
           </p>
 
           <div class="history-block">
-            <h3>The Competition &amp; Design</h3>
-            <p>
+            <h3 data-i18n="eiffel.compTitle">The Competition &amp; Design</h3>
+            <p data-i18n="eiffel.comp">
               In 1884, French engineer Gustave Eiffel and his company began
               developing plans for a tall iron tower. The design was mainly
               created by engineers Maurice Koechlin and Émile Nouguier, with
@@ -144,15 +163,15 @@
             </p>
           </div>
 
-          <h3>Construction (1887-1889)</h3>
-          <p>
+          <h3 data-i18n="eiffel.buildTitle">Construction (1887-1889)</h3>
+          <p data-i18n="eiffel.build">
             Construction started on 28 January 1887 and finished in just over
             two years. The tower was assembled from more than 18,000 iron pieces
             held together by 2.5 million rivets. At completion it was the
             tallest man-made structure in the world at 300 metres, a record it
             held until 1930.
           </p>
-          <p>
+          <p data-i18n="eiffel.dislike">
             Many Parisians initially disliked it. Artists and writers signed a
             petition calling it a “useless and monstrous” structure. Gustave
             Eiffel only had a 20-year permit; the tower was supposed to be
@@ -160,8 +179,8 @@
             it from destruction.
           </p>
 
-          <h3>From Temporary to Permanent Icon</h3>
-          <p>
+          <h3 data-i18n="eiffel.iconTitle">From Temporary to Permanent Icon</h3>
+          <p data-i18n="eiffel.icon">
             During World War I the tower intercepted enemy radio communications.
             Over the 20th century it became the beloved landmark we know today.
             Lighting systems were added over the decades, and every evening the
@@ -171,40 +190,40 @@
         </article>
         <aside class="guide-facts">
           <div class="facts-heading">
-            <h2>Quick Facts</h2>
+            <h2 data-i18n="guide.facts">Quick Facts</h2>
           </div>
           <ul
             class="fact-list"
             id="facts-list"
             tabindex="0"
-            aria-label="Quick facts"
+            aria-label="Quick facts" data-i18n-attr="aria-label:guide.factsLabel"
           >
-            <li><strong>Country</strong>France</li>
-            <li><strong>City</strong>Paris</li>
-            <li><strong>Built</strong>1887 - 1889</li>
-            <li><strong>Height</strong>330 m (with antennas)</li>
-            <li><strong>Designer</strong>Gustave Eiffel &amp; team</li>
-            <li><strong>Material</strong>Wrought iron</li>
-            <li><strong>Original Purpose</strong>1889 World’s Fair</li>
-            <li><strong>Visitors / Year</strong>≈ 7 million</li>
+            <li><strong data-i18n="guide.country">Country</strong><span data-i18n="eiffel.factCountry">France</span></li>
+            <li><strong data-i18n="guide.city">City</strong><span data-i18n="eiffel.factCity">Paris</span></li>
+            <li><strong data-i18n="guide.built">Built</strong><span data-i18n="eiffel.factBuilt">1887 - 1889</span></li>
+            <li><strong data-i18n="guide.height">Height</strong><span data-i18n="eiffel.factHeight">330 m (with antennas)</span></li>
+            <li><strong data-i18n="guide.designer">Designer</strong><span data-i18n="eiffel.factDesigner">Gustave Eiffel &amp; team</span></li>
+            <li><strong data-i18n="guide.material">Material</strong><span data-i18n="eiffel.factMaterial">Wrought iron</span></li>
+            <li><strong data-i18n="guide.purpose">Original Purpose</strong><span data-i18n="eiffel.factPurpose">1889 World’s Fair</span></li>
+            <li><strong data-i18n="guide.visitors">Visitors / Year</strong><span data-i18n="eiffel.factVisitors">≈ 7 million</span></li>
           </ul>
         </aside>
       </div>
       <section
         class="guide-highlights container"
-        aria-label="Visitor highlights"
+        aria-label="Visitor highlights" data-i18n-attr="aria-label:guide.highlights"
       >
         <div class="info-grid">
           <div class="info-box">
-            <h4>Best Photo Spots</h4>
-            <p>
+            <h4 data-i18n="guide.photos">Best Photo Spots</h4>
+            <p data-i18n="eiffel.photos">
               Trocadéro at sunset, Champ de Mars picnic lawns, and the Seine
               riverbanks for classic skyline shots.
             </p>
           </div>
           <div class="info-box">
-            <h4>Nearby Highlights</h4>
-            <p>
+            <h4 data-i18n="guide.nearby">Nearby Highlights</h4>
+            <p data-i18n="eiffel.nearby">
               Musée du Quai Branly, the Seine cruise piers, and the Champs de
               Mars gardens are all within walking distance.
             </p>
@@ -214,22 +233,22 @@
       <section
         class="photo-section"
         data-gallery
-        aria-label="Eiffel Tower photo gallery"
+        aria-label="Eiffel Tower photo gallery" data-i18n-attr="aria-label:eiffel.galleryLabel"
       >
         <div class="gallery-toolbar container">
-          <h2>A closer look.</h2>
+          <h2 data-i18n="guide.closer">A closer look.</h2>
           <div class="gallery-controls">
             <span class="gallery-count" aria-live="polite">1 / 5</span
             ><button
               type="button"
               class="gallery-prev"
-              aria-label="Previous photograph"
+              aria-label="Previous photograph" data-i18n-attr="aria-label:media.prev"
             >
               ←</button
             ><button
               type="button"
               class="gallery-next"
-              aria-label="Next photograph"
+              aria-label="Next photograph" data-i18n-attr="aria-label:media.next"
             >
               →
             </button>
@@ -238,13 +257,13 @@
         <div
           class="gallery-viewport"
           tabindex="0"
-          aria-label="Photographs, use arrow keys to browse"
+          aria-label="Photographs, use arrow keys to browse" data-i18n-attr="aria-label:media.browse"
         >
           <div class="gallery-track">
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/eiffel-tower.webp"
-                alt="Iron Lady of Paris"
+                alt="Iron Lady of Paris" data-i18n-attr="alt:eiffel.g1Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -255,8 +274,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Iron Lady of Paris</h4>
-                <p>
+                <h4 data-i18n="eiffel.g1Title">Iron Lady of Paris</h4>
+                <p data-i18n="eiffel.g1">
                   Built for the 1889 World’s Fair and once criticised as an
                   eyesore.
                 </p>
@@ -265,7 +284,7 @@
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/eiffel-2.webp"
-                alt="Champ de Mars"
+                alt="Champ de Mars" data-i18n-attr="alt:eiffel.g2Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -276,8 +295,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Champ de Mars</h4>
-                <p>
+                <h4 data-i18n="eiffel.g2Title">Champ de Mars</h4>
+                <p data-i18n="eiffel.g2">
                   The park at the tower’s feet is perfect for picnics and sunset
                   views.
                 </p>
@@ -286,7 +305,7 @@
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/eiffel-3.webp"
-                alt="Night Sparkle"
+                alt="Night Sparkle" data-i18n-attr="alt:eiffel.g3Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -297,14 +316,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Night Sparkle</h4>
-                <p>After dark the tower lights up and sparkles on the hour.</p>
+                <h4 data-i18n="eiffel.g3Title">Night Sparkle</h4>
+                <p data-i18n="eiffel.g3">After dark the tower lights up and sparkles on the hour.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/eiffel-4.webp"
-                alt="Seine Skyline"
+                alt="Seine Skyline" data-i18n-attr="alt:eiffel.g4Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -315,8 +334,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Seine Skyline</h4>
-                <p>
+                <h4 data-i18n="eiffel.g4Title">Seine Skyline</h4>
+                <p data-i18n="eiffel.g4">
                   River cruises offer some of the best angles of the landmark.
                 </p>
               </figcaption>
@@ -324,7 +343,7 @@
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/eiffel-5.webp"
-                alt="Visitor Favourite"
+                alt="Visitor Favourite" data-i18n-attr="alt:eiffel.g5Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -335,8 +354,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Visitor Favourite</h4>
-                <p>
+                <h4 data-i18n="eiffel.g5Title">Visitor Favourite</h4>
+                <p data-i18n="eiffel.g5">
                   Around 7 million people visit every year, book tickets early.
                 </p>
               </figcaption>
@@ -347,50 +366,34 @@
       <div class="guide-practical container">
         <div class="book-cta">
           <p>
-            <strong>Fly to Paris for the Eiffel Tower</strong>Search sample
-            flights from Hong Kong.
-          </p>
-          <a href="./booking.html?to=eiffel-tower" class="btn">Book a flight</a>
+            <strong data-i18n="eiffel.fly">Fly to Paris for the Eiffel Tower</strong><span data-i18n="guide.searchHk">Search sample flights from Hong Kong.</span></p>
+          <a href="./booking.html?to=eiffel-tower" class="btn" data-i18n="guide.book">Book a flight</a>
         </div>
         <div class="tips-section reveal">
-          <h3>Travel Tips for Visitors</h3>
+          <h3 data-i18n="guide.tips">Travel Tips for Visitors</h3>
           <ul class="tips-list">
             <li>
-              <strong>Best time:</strong> Early morning or late evening for
-              fewer crowds and beautiful lights. Avoid peak French school
-              holidays if you can.
-            </li>
+              <strong data-i18n="guide.tipTime">Best time:</strong> <span data-i18n="eiffel.tipTime">Early morning or late evening for fewer crowds and beautiful lights. Avoid peak French school holidays if you can.</span></li>
             <li>
-              <strong>Tickets:</strong> Buy online from the official site in
-              advance. Choose stairs or lift, and 2nd floor or summit access.
-            </li>
+              <strong data-i18n="guide.tipTickets">Tickets:</strong> <span data-i18n="eiffel.tipTickets">Buy online from the official site in advance. Choose stairs or lift, and 2nd floor or summit access.</span></li>
             <li>
-              <strong>Getting there:</strong> Metro lines 6, 8 or 9 (Bir-Hakeim,
-              École Militaire, Trocadéro). RER C also stops nearby.
-            </li>
+              <strong data-i18n="guide.tipThere">Getting there:</strong> <span data-i18n="eiffel.tipThere">Metro lines 6, 8 or 9 (Bir-Hakeim, École Militaire, Trocadéro). RER C also stops nearby.</span></li>
             <li>
-              <strong>Duration:</strong> Plan 1.5-3 hours depending on queues
-              and whether you go to the top.
-            </li>
+              <strong data-i18n="guide.tipDuration">Duration:</strong> <span data-i18n="eiffel.tipDuration">Plan 1.5-3 hours depending on queues and whether you go to the top.</span></li>
             <li>
-              <strong>What to bring:</strong> Valid ID, comfortable shoes, and a
-              light jacket, it can be windy at the summit.
-            </li>
+              <strong data-i18n="guide.tipBring">What to bring:</strong> <span data-i18n="eiffel.tipBring">Valid ID, comfortable shoes, and a light jacket, it can be windy at the summit.</span></li>
             <li>
-              <strong>Local tip:</strong> The free view from Trocadéro is
-              excellent, especially when the tower sparkles on the hour after
-              dark.
-            </li>
+              <strong data-i18n="guide.tipLocal">Local tip:</strong> <span data-i18n="eiffel.tipLocal">The free view from Trocadéro is excellent, especially when the tower sparkles on the hour after dark.</span></li>
           </ul>
         </div>
         <div class="video-section reveal">
-          <h3>Watch a Video about the Eiffel Tower</h3>
-          <p>Learn more about this landmark with the documentary below:</p>
+          <h3 data-i18n="eiffel.videoTitle">Watch a Video about the Eiffel Tower</h3>
+          <p data-i18n="guide.docIntro">Learn more about this landmark with the documentary below:</p>
           <div class="video-container">
             <button
               class="video-poster"
               type="button"
-              aria-label="Play the documentary"
+              aria-label="Play the documentary" data-i18n-attr="aria-label:media.play"
             >
               <img
                 src="./image/optimized/eiffel-tower-800.webp"
@@ -398,26 +401,26 @@
                 width="800"
                 height="530"
                 loading="lazy"
-              /><span>▶ Play documentary</span>
+              /><span data-i18n="media.playLabel">▶ Play documentary</span>
             </button>
             <div class="embed-loading" hidden role="status">
               <div class="orb-loader" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
-              <p>Loading the documentary...</p>
+              <p data-i18n="media.loading">Loading the documentary...</p>
               <a
                 class="embed-fallback text-link"
                 href="https://www.youtube.com/watch?v=xas7g5VvIRo"
                 target="_blank"
                 rel="noopener"
                 hidden
-                >Open on YouTube ↗</a
+                 data-i18n="media.youtube">Open on YouTube ↗</a
               >
             </div>
             <iframe
               hidden
               data-src="https://www.youtube.com/embed/xas7g5VvIRo"
-              title="Eiffel Tower Documentary"
+              title="Eiffel Tower Documentary" data-i18n-attr="title:eiffel.iframe"
               allow="
                 accelerometer;
                 autoplay;
@@ -435,7 +438,7 @@
             ><noscript
               ><iframe
                 src="https://www.youtube.com/embed/xas7g5VvIRo"
-                title="Eiffel Tower Documentary"
+                title="Eiffel Tower Documentary" data-i18n-attr="title:eiffel.iframe"
                 allow="
                   accelerometer;
                   autoplay;
@@ -455,7 +458,7 @@
         </div>
       </div>
       <section class="more-destinations container">
-        <h2>Where next?</h2>
+        <h2 data-i18n="guide.where">Where next?</h2>
         <ul class="related-list">
           <li>
             <a href="./colosseum.html"
@@ -467,7 +470,7 @@
                   ./image/optimized/colosseum.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Colosseum</a
+              /><span data-i18n="nav.colosseum">Colosseum</span></a
             >
           </li>
           <li>
@@ -480,7 +483,7 @@
                   ./image/optimized/machu-picchu.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Machu Picchu</a
+              /><span data-i18n="nav.machu">Machu Picchu</span></a
             >
           </li>
           <li>
@@ -493,7 +496,7 @@
                   ./image/optimized/taj-mahal.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Taj Mahal</a
+              /><span data-i18n="nav.taj">Taj Mahal</span></a
             >
           </li>
         </ul>
@@ -503,42 +506,43 @@
       <div class="footer-inner">
         <div class="footer-col">
           <div class="footer-brand">Wanderlust <span>World</span></div>
-          <p>
+          <p data-i18n="footer.blurb">
             Discover remarkable places through their history, culture and the
             journeys that take you there.
           </p>
         </div>
         <div class="footer-col">
-          <h3>Destinations</h3>
+          <h3 data-i18n="footer.destinations">Destinations</h3>
           <ul>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Explore</h3>
+          <h3 data-i18n="footer.explore">Explore</h3>
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#destinations">Featured Places</a></li>
-            <li><a href="./booking.html">Book Flights</a></li>
-            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./index.html#destinations" data-i18n="footer.featured">Featured Places</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
+            <li><a href="./index.html#plan" data-i18n="home.planLink">Plan Your Trip</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
-        <a href="#top">Back to top ↑</a>
+        <p data-i18n="footer.copy">&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top" data-i18n="footer.top">Back to top ↑</a>
       </div>
     </footer>
-    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+    <button class="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:footer.topLabel" hidden>
       ↑
     </button>
     <script src="./js/vendor/gsap.min.js" defer></script>
     <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
     <script src="./js/vendor/thinking-orbs.min.js" defer></script>
-    <script src="./js/orbs.js?v=20261010-4" defer></script>
-    <script src="./js/script.js?v=20261010-4" defer></script>
+    <script src="./js/orbs.js?v=20261010-5" defer></script>
+    <script src="./js/i18n.js?v=20261010-5" defer></script>
+    <script src="./js/script.js?v=20261010-5" defer></script>
   </body>
 </html>

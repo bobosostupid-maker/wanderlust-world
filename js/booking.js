@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
   let returnFocus = null;
   let bookingAttempt = 0;
   let isBooking = false;
+  let lastFlights = null;
+  let bookingPhase = "form";
+  let progressKey = "booking.creating";
+  let loadingStage = null;
+  let confirmState = null;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const background = document.querySelectorAll(
     ".site-header, .booking-hero, .booking-panel, footer, .back-to-top",
@@ -31,6 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
         "'": "&#39;",
       }[character];
     });
+  }
+  function t(key, vars) {
+    return window.wwT ? window.wwT(key, vars) : key;
+  }
+  function label(group, value) {
+    const key = group + "." + value;
+    const translated = t(key);
+    return translated === key ? value : translated;
+  }
+  function durationLabel(value) {
+    if (document.documentElement.lang !== "zh-HK") return value;
+    return String(value).replace(/(\d+)h\s*(\d+)m/, "$1小時$2分");
+  }
+  function cabinTitle(cabin) {
+    if (cabin === "Business") return label("cabin", "Business Class");
+    return label("cabin", cabin);
   }
   function setModalState(modal, open) {
     modal.classList.toggle("hidden", !open);
@@ -85,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function formatDate(dateStr) {
     const d = new Date(dateStr + "T00:00:00");
-    return d.toLocaleDateString("en-GB", {
+    const locale = document.documentElement.lang === "zh-HK" ? "zh-HK" : "en-HK";
+    return d.toLocaleDateString(locale, {
       weekday: "short",
       day: "numeric",
       month: "short",
@@ -119,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function routeMarkup(flight) {
     return `<div class="itinerary-route">
-      <div><strong>${flight.from}</strong><span>${flight.fromCity}</span></div>
+      <div><strong>${flight.from}</strong><span>${escapeHtml(label("city", flight.fromCity))}</span></div>
       <span class="itinerary-path" aria-hidden="true"><i></i></span>
-      <div><strong>${flight.to}</strong><span>${flight.toCity}</span></div>
+      <div><strong>${flight.to}</strong><span>${escapeHtml(label("city", flight.toCity))}</span></div>
     </div>`;
   }
 
@@ -154,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
           '"><span class="benefit-icon">' +
           icon +
           "</span>" +
-          b.text +
+          escapeHtml(label("benefit", b.text)) +
           "</li>"
         );
       })
@@ -166,23 +188,23 @@ document.addEventListener("DOMContentLoaded", function () {
       '">' +
       '<div class="fare-expand-left">' +
       "<h4>" +
-      copy.title +
+      escapeHtml(cabinTitle(cabin)) +
       "</h4>" +
       "<p>" +
-      copy.description +
+      escapeHtml(label("cabin.desc", cabin)) +
       "</p>" +
       '<div class="fare-expand-image">' +
       '<img src="' +
       copy.image +
       '" alt="' +
-      copy.title +
-      ' cabin">' +
+      escapeHtml(t("booking.cabinAlt", { title: cabinTitle(cabin) })) +
+      '">' +
       "</div>" +
       "</div>" +
       '<div class="fare-expand-right">' +
       '<div class="fare-expand-brand">' +
       '<span class="fare-cabin-label">' +
-      fare.cabin +
+      escapeHtml(label("cabin", fare.cabin)) +
       "</span>" +
       "<strong>" +
       fare.brand +
@@ -198,7 +220,9 @@ document.addEventListener("DOMContentLoaded", function () {
       flight.id +
       '" data-book-cabin="' +
       fare.cabin +
-      '">Select</button>' +
+      '">' +
+      escapeHtml(t("booking.select")) +
+      "</button>" +
       "</div>" +
       "</div>"
     );
@@ -211,9 +235,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return (
         '<div class="class-cell is-unavailable">' +
         '<span class="class-cell-label">' +
-        cabin +
+        escapeHtml(label("cabin", cabin)) +
         "</span>" +
-        '<span class="class-unavailable">Unavailable</span>' +
+        '<span class="class-unavailable">' +
+        escapeHtml(t("booking.unavailable")) +
+        "</span>" +
         "</div>"
       );
     }
@@ -230,14 +256,14 @@ document.addEventListener("DOMContentLoaded", function () {
       (isOpen ? ' aria-controls="fare-' + flight.id + '"' : "") +
       ">" +
       '<span class="class-cell-label">' +
-      cabin +
+      escapeHtml(label("cabin", cabin)) +
       "</span>" +
       '<span class="class-cell-price">' +
       formatPrice(fare.price) +
       "</span>" +
       (isOpen
-        ? '<span class="class-cell-hint">Selected</span>'
-        : '<span class="class-cell-hint">View fare</span>') +
+        ? '<span class="class-cell-hint">' + escapeHtml(t("booking.selected")) + "</span>"
+        : '<span class="class-cell-hint">' + escapeHtml(t("booking.viewFare")) + "</span>") +
       "</button>"
     );
   }
@@ -256,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
       '<div class="ac-route-col">' +
       '<div class="ac-airline-line">' +
       "<strong>" +
-      flight.airline +
+      escapeHtml(label("airline", flight.airline)) +
       "</strong>" +
       '<span class="ac-flight-code">' +
       flight.id +
@@ -273,9 +299,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "</div>" +
       '<div class="ac-mid">' +
       '<span class="ac-stops">' +
-      flight.stops +
+      escapeHtml(label("stops", flight.stops)) +
       " · " +
-      flight.duration +
+      escapeHtml(durationLabel(flight.duration)) +
       "</span>" +
       '<div class="ac-line"><span class="ac-dot"></span></div>' +
       '<span class="ac-date-under">' +
@@ -291,8 +317,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "</span>" +
       "</div>" +
       "</div>" +
-      '<p class="ac-operated">Operated by ' +
-      flight.airline +
+      '<p class="ac-operated">' +
+      escapeHtml(t("booking.operatedBy", { airline: label("airline", flight.airline) })) +
       "</p>" +
       "</div>" +
       renderClassCell(flight, "Economy") +
@@ -310,8 +336,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!flights.length) {
       resultsArea.innerHTML =
         '<div class="no-results">' +
-        "<h3>No flights found</h3>" +
-        "<p>Try another date or clear the date filter to see more options.</p>" +
+        "<h3>" +
+        escapeHtml(t("booking.noneTitle")) +
+        "</h3>" +
+        "<p>" +
+        escapeHtml(t("booking.noneBody")) +
+        "</p>" +
         "</div>";
       return;
     }
@@ -319,17 +349,29 @@ document.addEventListener("DOMContentLoaded", function () {
     resultsArea.innerHTML =
       '<div class="results-header">' +
       "<h3>" +
-      flights.length +
-      " flight" +
-      (flights.length > 1 ? "s" : "") +
-      " found</h3>" +
-      "<p>Fares are per person, one way, and include all taxes, fees and charges.</p>" +
+      escapeHtml(
+        t(flights.length > 1 ? "booking.foundMany" : "booking.foundOne", {
+          n: flights.length,
+        }),
+      ) +
+      "</h3>" +
+      "<p>" +
+      escapeHtml(t("booking.faresNote")) +
+      "</p>" +
       "</div>" +
       '<div class="flight-list-head">' +
-      '<span class="head-route">Flight</span>' +
-      '<span class="flight-class">Economy</span>' +
-      '<span class="flight-class">Premium Economy</span>' +
-      '<span class="flight-class">Business</span>' +
+      '<span class="head-route">' +
+      escapeHtml(t("booking.flight")) +
+      "</span>" +
+      '<span class="flight-class">' +
+      escapeHtml(label("cabin", "Economy")) +
+      "</span>" +
+      '<span class="flight-class">' +
+      escapeHtml(label("cabin", "Premium Economy")) +
+      "</span>" +
+      '<span class="flight-class">' +
+      escapeHtml(label("cabin", "Business")) +
+      "</span>" +
       "</div>" +
       '<div class="flight-list">' +
       flights.map(renderFlightCard).join("") +
@@ -367,6 +409,38 @@ document.addEventListener("DOMContentLoaded", function () {
     if (expanded) animateIn(expanded, { y: 16 });
   }
 
+  function fillSummary() {
+    if (!selectedFlight || !selectedFare) return;
+    const airline = label("airline", selectedFlight.airline);
+    modalSummary.innerHTML =
+      routeMarkup(selectedFlight) +
+      `
+      <p class="itinerary-meta">${escapeHtml(airline)} · ${selectedFlight.id}<br>
+      ${formatDate(selectedFlight.departDate)} · ${selectedFlight.departTime} - ${selectedFlight.arriveTime}</p>
+      <div class="itinerary-cabin"><span>${escapeHtml(label("cabin", selectedFare.cabin))} · ${escapeHtml(selectedFare.brand)}</span>
+      <span><strong>${formatPrice(selectedFare.price)}</strong> ${escapeHtml(t("booking.perPerson"))}</span></div>`;
+  }
+
+  function renderConfirmation(state) {
+    const airline = label("airline", state.flight.airline);
+    const who = t(state.pax === 1 ? "booking.traveler" : "booking.travelers");
+    confirmDetails.innerHTML =
+      routeMarkup(state.flight) +
+      `
+      <p class="itinerary-meta">${escapeHtml(airline)} · ${state.flight.id}<br>
+      ${formatDate(state.flight.departDate)} · ${state.flight.departTime} - ${state.flight.arriveTime}</p>
+      <dl class="confirmation-details">
+        <div><dt>${escapeHtml(t("booking.passenger"))}</dt><dd>${escapeHtml(state.name)}</dd></div>
+        <div><dt>${escapeHtml(t("booking.passengers"))}</dt><dd>${state.pax}</dd></div>
+        <div class="confirmation-email"><dt>${escapeHtml(t("booking.email"))}</dt><dd>${escapeHtml(state.email)}</dd></div>
+        <div><dt>${escapeHtml(t("booking.cabin"))}</dt><dd>${escapeHtml(label("cabin", state.fare.cabin))}</dd></div>
+        <div><dt>${escapeHtml(t("booking.fare"))}</dt><dd>${escapeHtml(state.fare.brand)}</dd></div>
+      </dl>
+      <div class="confirmation-total"><span>${escapeHtml(t("booking.total", { n: state.pax, who: who }))}</span>
+      <strong>${formatPrice(state.total)}</strong></div>
+      <div class="confirmation-reference"><span>${escapeHtml(t("booking.reference"))}</span><strong>${escapeHtml(state.ref)}</strong></div>`;
+  }
+
   searchForm.addEventListener("submit", async function (e) {
     e.preventDefault();
     const searchButton = searchForm.querySelector('button[type="submit"]');
@@ -375,8 +449,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const date = document.getElementById("depart-date").value;
 
     if (!destination) {
+      lastFlights = null;
       resultsArea.innerHTML =
-        '<p class="results-placeholder">Please select a destination first.</p>';
+        '<p class="results-placeholder" data-i18n="booking.needDestination">' +
+        escapeHtml(t("booking.needDestination")) +
+        "</p>";
       return;
     }
 
@@ -385,10 +462,11 @@ document.addEventListener("DOMContentLoaded", function () {
       delete expandedCabin[k];
     });
 
+    lastFlights = null;
     resultsArea.innerHTML = "";
     loadingState.classList.remove("hidden");
     searchButton.disabled = true;
-    searchButton.textContent = "Searching...";
+    searchButton.textContent = t("booking.searching");
     resultsArea.setAttribute("aria-busy", "true");
     loadingState.scrollIntoView({
       behavior: reducedMotion.matches ? "instant" : "smooth",
@@ -397,36 +475,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Deliberate, visible simulation: no external flight or booking API is called.
     const stages = [
-      [
-        "searching",
-        "Finding sample flights...",
-        "Checking your selected route.",
-      ],
-      [
-        "connecting",
-        "Comparing cabin fares...",
-        "Matching seats, baggage and benefits.",
-      ],
-      [
-        "solving",
-        "Preparing your options...",
-        "Your sample flights are almost ready.",
-      ],
+      ["searching", "booking.stage1Title", "booking.stage1Caption"],
+      ["connecting", "booking.stage2Title", "booking.stage2Caption"],
+      ["solving", "booking.stage3Title", "booking.stage3Caption"],
     ];
-    for (const [index, [state, title, caption]] of stages.entries()) {
+    for (const [index, [state, titleKey, captionKey]] of stages.entries()) {
+      loadingStage = { title: titleKey, caption: captionKey };
       loadingState.querySelector(".orb-loader").dataset.orbState = state;
-      loadingState.querySelector(".loading-title").textContent = title;
-      loadingState.querySelector(".loading-caption").textContent = caption;
+      loadingState.querySelector(".loading-title").textContent = t(titleKey);
+      loadingState.querySelector(".loading-caption").textContent = t(captionKey);
       loadingState.querySelector(".loading-step").textContent =
         `${index + 1} / ${stages.length}`;
       await waitFor(1600);
     }
 
     const results = searchFlights(destination, date);
+    loadingStage = null;
     loadingState.classList.add("hidden");
     searchButton.disabled = false;
-    searchButton.textContent = "Search flights";
+    searchButton.textContent = t("booking.search");
     resultsArea.setAttribute("aria-busy", "false");
+    lastFlights = results;
     renderResults(results);
     resultsArea.scrollIntoView({
       behavior: reducedMotion.matches ? "instant" : "smooth",
@@ -460,13 +529,8 @@ document.addEventListener("DOMContentLoaded", function () {
     selectedFare = selectedFlight ? getFare(selectedFlight, cabin) : null;
     if (!selectedFlight || !selectedFare) return;
 
-    modalSummary.innerHTML =
-      routeMarkup(selectedFlight) +
-      `
-      <p class="itinerary-meta">${selectedFlight.airline} · ${selectedFlight.id}<br>
-      ${formatDate(selectedFlight.departDate)} · ${selectedFlight.departTime} - ${selectedFlight.arriveTime}</p>
-      <div class="itinerary-cabin"><span>${selectedFare.cabin} · ${selectedFare.brand}</span>
-      <span><strong>${formatPrice(selectedFare.price)}</strong> / person</span></div>`;
+    bookingPhase = "form";
+    fillSummary();
 
     bookingForm.reset();
     returnFocus = selectBtn;
@@ -479,7 +543,8 @@ document.addEventListener("DOMContentLoaded", function () {
     bookingProgress.classList.add("hidden");
     bookingForm.classList.remove("hidden");
     modalSummary.classList.remove("hidden");
-    modalTitle.textContent = "Complete your booking";
+    bookingPhase = "form";
+    modalTitle.textContent = t("booking.modalTitle");
     bookingModal.querySelector(".modal-panel").removeAttribute("aria-busy");
     setModalState(bookingModal, false);
   }
@@ -513,18 +578,20 @@ document.addEventListener("DOMContentLoaded", function () {
     bookingForm.classList.add("hidden");
     modalSummary.classList.add("hidden");
     bookingProgress.classList.remove("hidden");
-    modalTitle.textContent = "Preparing your journey";
+    bookingPhase = "progress";
+    modalTitle.textContent = t("booking.preparing");
     bookingModal
       .querySelector(".modal-panel")
       .setAttribute("aria-busy", "true");
     bookingModal.querySelector(".modal-close").focus();
-    for (const [state, title] of [
-      ["composing", "Creating your sample itinerary..."],
-      ["weaving", "Saving your flight selection..."],
-      ["shaping", "Preparing your confirmation..."],
+    for (const [state, titleKey] of [
+      ["composing", "booking.creating"],
+      ["weaving", "booking.savingFlight"],
+      ["shaping", "booking.shaping"],
     ]) {
+      progressKey = titleKey;
       bookingProgress.querySelector(".orb-loader").dataset.orbState = state;
-      bookingProgress.querySelector(".progress-title").textContent = title;
+      bookingProgress.querySelector(".progress-title").textContent = t(titleKey);
       await waitFor(1200);
       // Closing the dialog cancels the pending simulation, including its write.
       if (attempt !== bookingAttempt) return;
@@ -549,27 +616,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     closeBookingModal();
-    confirmDetails.innerHTML =
-      routeMarkup(flight) +
-      `
-      <p class="itinerary-meta">${flight.airline} · ${flight.id}<br>
-      ${formatDate(flight.departDate)} · ${flight.departTime} - ${flight.arriveTime}</p>
-      <dl class="confirmation-details">
-        <div><dt>Passenger</dt><dd>${escapeHtml(name)}</dd></div>
-        <div><dt>Passengers</dt><dd>${pax}</dd></div>
-        <div class="confirmation-email"><dt>Email</dt><dd>${escapeHtml(email)}</dd></div>
-        <div><dt>Cabin</dt><dd>${fare.cabin}</dd></div>
-        <div><dt>Fare</dt><dd>${fare.brand}</dd></div>
-      </dl>
-      <div class="confirmation-total"><span>Total for ${pax} ${pax === 1 ? "traveler" : "travelers"}</span>
-      <strong>${formatPrice(total)}</strong></div>
-      <div class="confirmation-reference"><span>Booking reference</span><strong>${ref}</strong></div>`;
+    confirmState = {
+      flight: flight,
+      fare: fare,
+      name: name,
+      email: email,
+      pax: pax,
+      total: total,
+      ref: ref,
+    };
+    renderConfirmation(confirmState);
 
     setModalState(confirmModal, true);
     animateIn(confirmModal.querySelector(".confirm-icon"), {
       y: 0,
       scale: 0.6,
     });
+  });
+  document.addEventListener("ww:lang", function () {
+    const searchButton = searchForm.querySelector('button[type="submit"]');
+    if (searchButton) {
+      searchButton.textContent = searchButton.disabled
+        ? t("booking.searching")
+        : t("booking.search");
+    }
+    if (loadingStage && !loadingState.classList.contains("hidden")) {
+      loadingState.querySelector(".loading-title").textContent = t(loadingStage.title);
+      loadingState.querySelector(".loading-caption").textContent = t(loadingStage.caption);
+    }
+    if (lastFlights) renderResults(lastFlights);
+    if (bookingPhase === "progress") {
+      modalTitle.textContent = t("booking.preparing");
+      const progressTitle = bookingProgress.querySelector(".progress-title");
+      if (progressTitle) progressTitle.textContent = t(progressKey);
+    }
+    if (
+      bookingPhase === "form" &&
+      selectedFlight &&
+      selectedFare &&
+      !bookingModal.classList.contains("hidden")
+    ) {
+      fillSummary();
+    }
+    if (confirmState && !confirmModal.classList.contains("hidden")) {
+      renderConfirmation(confirmState);
+    }
   });
   document.addEventListener("keydown", function (event) {
     const modal = !confirmModal.classList.contains("hidden")

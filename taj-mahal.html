@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="History, travel tips, and visitor guide for the Taj Mahal in Agra, India."
+      content="History, travel tips, and visitor guide for the Taj Mahal in Agra, India." data-i18n-attr="content:taj.metaDescription"
     />
-    <title>Taj Mahal | Wanderlust World</title>
+    <title data-i18n="taj.metaTitle">Taj Mahal | Wanderlust World</title>
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="./image/wanderlust.png" type="image/png" />
 
@@ -26,35 +26,54 @@
       fetchpriority="high"
     />
     <script src="./js/theme.js"></script>
-    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+    <script src="./js/lang.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-6" />
   </head>
   <body id="top" class="page-taj-mahal">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="nav-container">
         <a href="./index.html" class="logo"
           ><img
             src="./image/wanderlust.png"
-            alt="Wanderlust logo"
+            alt="Wanderlust logo" data-i18n-attr="alt:common.logoAlt"
             width="32"
             height="32"
           />Wanderlust <span>World</span></a
         >
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
             <li>
               <a href="./taj-mahal.html" class="active" aria-current="page"
-                >Taj Mahal</a
+                 data-i18n="nav.taj">Taj Mahal</a
               >
             </li>
-            <li><a href="./booking.html">Book Flights</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
           </ul>
         </nav>
         <div class="header-actions">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:lang.group"
+          >
+            <button type="button" data-set-lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button
+              type="button"
+              data-set-lang="zh-HK"
+              lang="zh-HK"
+              aria-pressed="false"
+            >
+              繁
+            </button>
+          </div>
           <button
             class="theme-toggle"
             type="button"
@@ -80,7 +99,7 @@
           <button
             class="hamburger-btn"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Open navigation" data-i18n-attr="aria-label:nav.open"
             aria-controls="main-nav"
             aria-expanded="false"
           >
@@ -101,7 +120,7 @@
               srcset="./image/optimized/taj-mahal-mobile.webp" />
             <img
               src="./image/optimized/taj-mahal.webp"
-              alt="Taj Mahal in India"
+              alt="Taj Mahal in India" data-i18n-attr="alt:taj.heroAlt"
               width="1600"
               height="1067"
               fetchpriority="high"
@@ -113,18 +132,18 @@
           /></picture>
         </div>
         <div class="hero-content">
-          <p class="hero-location">India · Agra</p>
-          <h1 id="attraction-title">Taj Mahal</h1>
-          <p>A monument to love.</p>
+          <p class="hero-location" data-i18n="place.indiaAgra">India · Agra</p>
+          <h1 id="attraction-title" data-i18n="nav.taj">Taj Mahal</h1>
+          <p data-i18n="home.tajTitle">A monument to love.</p>
           <a class="btn btn-white" href="#history"
-            >Explore the history <span aria-hidden="true">↘</span></a
+            ><span data-i18n="guide.exploreHistory">Explore the history</span> <span aria-hidden="true">↘</span></a
           >
         </div>
       </section>
       <div class="guide-layout container" id="history">
         <article class="guide-story">
-          <h2>History of the Taj Mahal</h2>
-          <p>
+          <h2 data-i18n="taj.historyTitle">History of the Taj Mahal</h2>
+          <p data-i18n="taj.intro">
             The Taj Mahal is widely regarded as one of the most beautiful
             buildings ever created and a supreme example of Mughal architecture.
             Located on the banks of the Yamuna River in Agra, it was built as a
@@ -132,8 +151,8 @@
           </p>
 
           <div class="history-block">
-            <h3>A Monument of Love</h3>
-            <p>
+            <h3 data-i18n="taj.loveTitle">A Monument of Love</h3>
+            <p data-i18n="taj.love">
               In 1631, Mumtaz Mahal, the beloved wife of Mughal Emperor Shah
               Jahan, died while giving birth to their 14th child. Overwhelmed by
               grief, Shah Jahan ordered the most magnificent tomb the world had
@@ -141,14 +160,14 @@
             </p>
           </div>
 
-          <h3>Design and Construction</h3>
-          <p>
+          <h3 data-i18n="taj.designTitle">Design and Construction</h3>
+          <p data-i18n="taj.design">
             The main architect is generally believed to have been Ustad Ahmad
             Lahori. The complex combines Persian, Islamic, and Indian
             traditions. The white marble mausoleum is flanked by a mosque and a
             guest house, with formal gardens in the classic charbagh pattern.
           </p>
-          <p>
+          <p data-i18n="taj.materials">
             More than 20,000 artisans worked on the project. Materials came from
             across India and Central Asia, white marble from Makrana, jade and
             crystal from China, turquoise from Tibet, and lapis lazuli from
@@ -156,8 +175,8 @@
             surrounding works finished by about 1653.
           </p>
 
-          <h3>Later History &amp; Heritage</h3>
-          <p>
+          <h3 data-i18n="taj.laterTitle">Later History &amp; Heritage</h3>
+          <p data-i18n="taj.later">
             After Shah Jahan was overthrown by his son Aurangzeb in 1658, he was
             imprisoned in Agra Fort, where he could see the Taj Mahal until his
             death in 1666. He was buried beside Mumtaz Mahal. The monument was
@@ -167,40 +186,40 @@
         </article>
         <aside class="guide-facts">
           <div class="facts-heading">
-            <h2>Quick Facts</h2>
+            <h2 data-i18n="guide.facts">Quick Facts</h2>
           </div>
           <ul
             class="fact-list"
             id="facts-list"
             tabindex="0"
-            aria-label="Quick facts"
+            aria-label="Quick facts" data-i18n-attr="aria-label:guide.factsLabel"
           >
-            <li><strong>Country</strong>India</li>
-            <li><strong>City</strong>Agra, Uttar Pradesh</li>
-            <li><strong>Built</strong>1632 - 1653</li>
-            <li><strong>Commissioned by</strong>Emperor Shah Jahan</li>
-            <li><strong>Dedicated to</strong>Mumtaz Mahal</li>
-            <li><strong>Main Material</strong>White Makrana marble</li>
-            <li><strong>UNESCO Status</strong>World Heritage (1983)</li>
-            <li><strong>Style</strong>Mughal architecture</li>
+            <li><strong data-i18n="guide.country">Country</strong><span data-i18n="taj.factCountry">India</span></li>
+            <li><strong data-i18n="guide.city">City</strong><span data-i18n="taj.factCity">Agra, Uttar Pradesh</span></li>
+            <li><strong data-i18n="guide.built">Built</strong><span data-i18n="taj.factBuilt">1632 - 1653</span></li>
+            <li><strong data-i18n="guide.commissioned">Commissioned by</strong><span data-i18n="taj.factBy">Emperor Shah Jahan</span></li>
+            <li><strong data-i18n="guide.dedicated">Dedicated to</strong><span data-i18n="taj.factFor">Mumtaz Mahal</span></li>
+            <li><strong data-i18n="guide.mainMaterial">Main Material</strong><span data-i18n="taj.factMaterial">White Makrana marble</span></li>
+            <li><strong data-i18n="guide.unesco">UNESCO Status</strong><span data-i18n="taj.factUnesco">World Heritage (1983)</span></li>
+            <li><strong data-i18n="guide.style">Style</strong><span data-i18n="taj.factStyle">Mughal architecture</span></li>
           </ul>
         </aside>
       </div>
       <section
         class="guide-highlights container"
-        aria-label="Visitor highlights"
+        aria-label="Visitor highlights" data-i18n-attr="aria-label:guide.highlights"
       >
         <div class="info-grid">
           <div class="info-box">
-            <h4>Best Photo Spots</h4>
-            <p>
+            <h4 data-i18n="guide.photos">Best Photo Spots</h4>
+            <p data-i18n="taj.photos">
               The main gateway framing shot at sunrise, the reflecting pool
               symmetry, and the mosque side for softer afternoon light.
             </p>
           </div>
           <div class="info-box">
-            <h4>Nearby Highlights</h4>
-            <p>
+            <h4 data-i18n="guide.nearby">Nearby Highlights</h4>
+            <p data-i18n="taj.nearby">
               Agra Fort pairs perfectly with the Taj Mahal for a full-day
               itinerary. Mehtab Bagh offers a quieter sunset view across the
               river.
@@ -211,22 +230,22 @@
       <section
         class="photo-section"
         data-gallery
-        aria-label="Taj Mahal photo gallery"
+        aria-label="Taj Mahal photo gallery" data-i18n-attr="aria-label:taj.galleryLabel"
       >
         <div class="gallery-toolbar container">
-          <h2>A closer look.</h2>
+          <h2 data-i18n="guide.closer">A closer look.</h2>
           <div class="gallery-controls">
             <span class="gallery-count" aria-live="polite">1 / 5</span
             ><button
               type="button"
               class="gallery-prev"
-              aria-label="Previous photograph"
+              aria-label="Previous photograph" data-i18n-attr="aria-label:media.prev"
             >
               ←</button
             ><button
               type="button"
               class="gallery-next"
-              aria-label="Next photograph"
+              aria-label="Next photograph" data-i18n-attr="aria-label:media.next"
             >
               →
             </button>
@@ -235,13 +254,13 @@
         <div
           class="gallery-viewport"
           tabindex="0"
-          aria-label="Photographs, use arrow keys to browse"
+          aria-label="Photographs, use arrow keys to browse" data-i18n-attr="aria-label:media.browse"
         >
           <div class="gallery-track">
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/taj-mahal.webp"
-                alt="Monument of Love"
+                alt="Monument of Love" data-i18n-attr="alt:taj.g1Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -252,14 +271,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Monument of Love</h4>
-                <p>Shah Jahan built it in memory of Mumtaz Mahal.</p>
+                <h4 data-i18n="taj.g1Title">Monument of Love</h4>
+                <p data-i18n="taj.g1">Shah Jahan built it in memory of Mumtaz Mahal.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/taj-2.webp"
-                alt="Marble Masterpiece"
+                alt="Marble Masterpiece" data-i18n-attr="alt:taj.g2Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -270,14 +289,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Marble Masterpiece</h4>
-                <p>Inlaid gemstones and perfect symmetry define its beauty.</p>
+                <h4 data-i18n="taj.g2Title">Marble Masterpiece</h4>
+                <p data-i18n="taj.g2">Inlaid gemstones and perfect symmetry define its beauty.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/taj-3.webp"
-                alt="Reflecting Pool"
+                alt="Reflecting Pool" data-i18n-attr="alt:taj.g3Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -288,8 +307,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Reflecting Pool</h4>
-                <p>
+                <h4 data-i18n="taj.g3Title">Reflecting Pool</h4>
+                <p data-i18n="taj.g3">
                   The classic symmetrical view is framed by the charbagh
                   gardens.
                 </p>
@@ -298,7 +317,7 @@
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/taj-4.webp"
-                alt="Gateway Perspective"
+                alt="Gateway Perspective" data-i18n-attr="alt:taj.g4Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -309,14 +328,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Gateway Perspective</h4>
-                <p>The main gate perfectly frames the mausoleum beyond.</p>
+                <h4 data-i18n="taj.g4Title">Gateway Perspective</h4>
+                <p data-i18n="taj.g4">The main gate perfectly frames the mausoleum beyond.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/taj-5.webp"
-                alt="Sunrise Magic"
+                alt="Sunrise Magic" data-i18n-attr="alt:taj.g5Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -327,8 +346,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Sunrise Magic</h4>
-                <p>Early morning light on the white marble is unforgettable.</p>
+                <h4 data-i18n="taj.g5Title">Sunrise Magic</h4>
+                <p data-i18n="taj.g5">Early morning light on the white marble is unforgettable.</p>
               </figcaption>
             </figure>
           </div>
@@ -337,48 +356,34 @@
       <div class="guide-practical container">
         <div class="book-cta">
           <p>
-            <strong>Fly to New Delhi for the Taj Mahal</strong>Search sample
-            flights from Hong Kong.
-          </p>
-          <a href="./booking.html?to=taj-mahal" class="btn">Book a flight</a>
+            <strong data-i18n="taj.fly">Fly to New Delhi for the Taj Mahal</strong><span data-i18n="guide.searchHk">Search sample flights from Hong Kong.</span></p>
+          <a href="./booking.html?to=taj-mahal" class="btn" data-i18n="guide.book">Book a flight</a>
         </div>
         <div class="tips-section reveal">
-          <h3>Travel Tips for Visitors</h3>
+          <h3 data-i18n="guide.tips">Travel Tips for Visitors</h3>
           <ul class="tips-list">
             <li>
-              <strong>Best time:</strong> October to March for cooler weather.
-              Sunrise visits are magical and less crowded.
-            </li>
+              <strong data-i18n="guide.tipTime">Best time:</strong> <span data-i18n="taj.tipTime">October to March for cooler weather. Sunrise visits are magical and less crowded.</span></li>
             <li>
-              <strong>Tickets:</strong> Buy online in advance. Foreign visitors
-              pay a higher fee. Closed on Fridays.
-            </li>
+              <strong data-i18n="guide.tipTickets">Tickets:</strong> <span data-i18n="taj.tipTickets">Buy online in advance. Foreign visitors pay a higher fee. Closed on Fridays.</span></li>
             <li>
-              <strong>Getting there:</strong> About 3-4 hours by express train
-              from Delhi, or 2-3 hours by car.
-            </li>
+              <strong data-i18n="guide.tipThere">Getting there:</strong> <span data-i18n="taj.tipThere">About 3-4 hours by express train from Delhi, or 2-3 hours by car.</span></li>
             <li>
-              <strong>Duration:</strong> Allow 2-3 hours for the complex,
-              gardens, and museum.
-            </li>
+              <strong data-i18n="guide.tipDuration">Duration:</strong> <span data-i18n="taj.tipDuration">Allow 2-3 hours for the complex, gardens, and museum.</span></li>
             <li>
-              <strong>What to bring:</strong> Modest clothing (shoulders and
-              knees covered), comfortable shoes, water, and sun protection.
-            </li>
+              <strong data-i18n="guide.tipBring">What to bring:</strong> <span data-i18n="taj.tipBring">Modest clothing (shoulders and knees covered), comfortable shoes, water, and sun protection.</span></li>
             <li>
-              <strong>Local tip:</strong> Combine with Agra Fort the same day
-              for a richer historical experience.
-            </li>
+              <strong data-i18n="guide.tipLocal">Local tip:</strong> <span data-i18n="taj.tipLocal">Combine with Agra Fort the same day for a richer historical experience.</span></li>
           </ul>
         </div>
         <div class="video-section reveal">
-          <h3>Watch a Video about the Taj Mahal</h3>
-          <p>Learn more about this landmark with the short film below:</p>
+          <h3 data-i18n="taj.videoTitle">Watch a Video about the Taj Mahal</h3>
+          <p data-i18n="guide.shortIntro">Learn more about this landmark with the short film below:</p>
           <div class="video-container">
             <button
               class="video-poster"
               type="button"
-              aria-label="Play the documentary"
+              aria-label="Play the documentary" data-i18n-attr="aria-label:media.play"
             >
               <img
                 src="./image/optimized/taj-mahal-800.webp"
@@ -386,26 +391,26 @@
                 width="800"
                 height="530"
                 loading="lazy"
-              /><span>▶ Play documentary</span>
+              /><span data-i18n="media.playLabel">▶ Play documentary</span>
             </button>
             <div class="embed-loading" hidden role="status">
               <div class="orb-loader" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
-              <p>Loading the documentary...</p>
+              <p data-i18n="media.loading">Loading the documentary...</p>
               <a
                 class="embed-fallback text-link"
                 href="https://www.youtube.com/watch?v=v580zy82rcE"
                 target="_blank"
                 rel="noopener"
                 hidden
-                >Open on YouTube ↗</a
+                 data-i18n="media.youtube">Open on YouTube ↗</a
               >
             </div>
             <iframe
               hidden
               data-src="https://www.youtube.com/embed/v580zy82rcE"
-              title="Taj Mahal Documentary"
+              title="Taj Mahal Documentary" data-i18n-attr="title:taj.iframe"
               allow="
                 accelerometer;
                 autoplay;
@@ -423,7 +428,7 @@
             ><noscript
               ><iframe
                 src="https://www.youtube.com/embed/v580zy82rcE"
-                title="Taj Mahal Documentary"
+                title="Taj Mahal Documentary" data-i18n-attr="title:taj.iframe"
                 allow="
                   accelerometer;
                   autoplay;
@@ -443,7 +448,7 @@
         </div>
       </div>
       <section class="more-destinations container">
-        <h2>Where next?</h2>
+        <h2 data-i18n="guide.where">Where next?</h2>
         <ul class="related-list">
           <li>
             <a href="./eiffel-tower.html"
@@ -455,7 +460,7 @@
                   ./image/optimized/eiffel-tower.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Eiffel Tower</a
+              /><span data-i18n="nav.eiffel">Eiffel Tower</span></a
             >
           </li>
           <li>
@@ -468,7 +473,7 @@
                   ./image/optimized/colosseum.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Colosseum</a
+              /><span data-i18n="nav.colosseum">Colosseum</span></a
             >
           </li>
           <li>
@@ -481,7 +486,7 @@
                   ./image/optimized/machu-picchu.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Machu Picchu</a
+              /><span data-i18n="nav.machu">Machu Picchu</span></a
             >
           </li>
         </ul>
@@ -491,42 +496,43 @@
       <div class="footer-inner">
         <div class="footer-col">
           <div class="footer-brand">Wanderlust <span>World</span></div>
-          <p>
+          <p data-i18n="footer.blurb">
             Discover remarkable places through their history, culture and the
             journeys that take you there.
           </p>
         </div>
         <div class="footer-col">
-          <h3>Destinations</h3>
+          <h3 data-i18n="footer.destinations">Destinations</h3>
           <ul>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Explore</h3>
+          <h3 data-i18n="footer.explore">Explore</h3>
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#destinations">Featured Places</a></li>
-            <li><a href="./booking.html">Book Flights</a></li>
-            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./index.html#destinations" data-i18n="footer.featured">Featured Places</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
+            <li><a href="./index.html#plan" data-i18n="home.planLink">Plan Your Trip</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
-        <a href="#top">Back to top ↑</a>
+        <p data-i18n="footer.copy">&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top" data-i18n="footer.top">Back to top ↑</a>
       </div>
     </footer>
-    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+    <button class="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:footer.topLabel" hidden>
       ↑
     </button>
     <script src="./js/vendor/gsap.min.js" defer></script>
     <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
     <script src="./js/vendor/thinking-orbs.min.js" defer></script>
-    <script src="./js/orbs.js?v=20261010-4" defer></script>
-    <script src="./js/script.js?v=20261010-4" defer></script>
+    <script src="./js/orbs.js?v=20261010-5" defer></script>
+    <script src="./js/i18n.js?v=20261010-5" defer></script>
+    <script src="./js/script.js?v=20261010-5" defer></script>
   </body>
 </html>

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="History, travel tips, and visitor guide for the Colosseum in Rome, Italy."
+      content="History, travel tips, and visitor guide for the Colosseum in Rome, Italy." data-i18n-attr="content:colosseum.metaDescription"
     />
-    <title>Colosseum | Wanderlust World</title>
+    <title data-i18n="colosseum.metaTitle">Colosseum | Wanderlust World</title>
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="./image/wanderlust.png" type="image/png" />
 
@@ -26,35 +26,54 @@
       fetchpriority="high"
     />
     <script src="./js/theme.js"></script>
-    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+    <script src="./js/lang.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-6" />
   </head>
   <body id="top" class="page-colosseum">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="nav-container">
         <a href="./index.html" class="logo"
           ><img
             src="./image/wanderlust.png"
-            alt="Wanderlust logo"
+            alt="Wanderlust logo" data-i18n-attr="alt:common.logoAlt"
             width="32"
             height="32"
           />Wanderlust <span>World</span></a
         >
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
             <li>
               <a href="./colosseum.html" class="active" aria-current="page"
-                >Colosseum</a
+                 data-i18n="nav.colosseum">Colosseum</a
               >
             </li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
-            <li><a href="./booking.html">Book Flights</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
           </ul>
         </nav>
         <div class="header-actions">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:lang.group"
+          >
+            <button type="button" data-set-lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button
+              type="button"
+              data-set-lang="zh-HK"
+              lang="zh-HK"
+              aria-pressed="false"
+            >
+              繁
+            </button>
+          </div>
           <button
             class="theme-toggle"
             type="button"
@@ -80,7 +99,7 @@
           <button
             class="hamburger-btn"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Open navigation" data-i18n-attr="aria-label:nav.open"
             aria-controls="main-nav"
             aria-expanded="false"
           >
@@ -101,7 +120,7 @@
               srcset="./image/optimized/colosseum-mobile.webp" />
             <img
               src="./image/optimized/colosseum.webp"
-              alt="Colosseum in Italy"
+              alt="Colosseum in Italy" data-i18n-attr="alt:colosseum.heroAlt"
               width="1600"
               height="1067"
               fetchpriority="high"
@@ -113,18 +132,18 @@
           /></picture>
         </div>
         <div class="hero-content">
-          <p class="hero-location">Italy · Rome</p>
-          <h1 id="attraction-title">Colosseum</h1>
-          <p>Walk into ancient Rome.</p>
+          <p class="hero-location" data-i18n="place.italyRome">Italy · Rome</p>
+          <h1 id="attraction-title" data-i18n="nav.colosseum">Colosseum</h1>
+          <p data-i18n="home.colosseumTitle">Walk into ancient Rome.</p>
           <a class="btn btn-white" href="#history"
-            >Explore the history <span aria-hidden="true">↘</span></a
+            ><span data-i18n="guide.exploreHistory">Explore the history</span> <span aria-hidden="true">↘</span></a
           >
         </div>
       </section>
       <div class="guide-layout container" id="history">
         <article class="guide-story">
-          <h2>History of the Colosseum</h2>
-          <p>
+          <h2 data-i18n="colosseum.historyTitle">History of the Colosseum</h2>
+          <p data-i18n="colosseum.intro">
             The Colosseum, also known as the Flavian Amphitheatre, is the
             largest amphitheatre ever built and one of the greatest works of
             Roman engineering. Located in the heart of Rome, it remains a
@@ -132,8 +151,8 @@
           </p>
 
           <div class="history-block">
-            <h3>Construction under the Flavians</h3>
-            <p>
+            <h3 data-i18n="colosseum.flavianTitle">Construction under the Flavians</h3>
+            <p data-i18n="colosseum.flavian">
               Construction began around 70-72 AD under Emperor Vespasian. It was
               completed in 80 AD under his son Titus, and later modified under
               Domitian. The amphitheatre was built on the site of Nero’s private
@@ -142,8 +161,8 @@
             </p>
           </div>
 
-          <h3>Design and Capacity</h3>
-          <p>
+          <h3 data-i18n="colosseum.designTitle">Design and Capacity</h3>
+          <p data-i18n="colosseum.design">
             The Colosseum could hold an estimated 50,000 to 80,000 spectators. A
             complex system of vaults, corridors, and staircases allowed crowds
             to enter and exit efficiently. Beneath the arena lay the hypogeum,
@@ -151,16 +170,16 @@
             machinery.
           </p>
 
-          <h3>Games and Spectacles</h3>
-          <p>
+          <h3 data-i18n="colosseum.gamesTitle">Games and Spectacles</h3>
+          <p data-i18n="colosseum.games">
             For centuries it hosted gladiatorial contests, animal hunts, public
             executions, and even mock naval battles in its early years. Events
             were free to the public and served as both entertainment and
             political propaganda.
           </p>
 
-          <h3>Later Centuries</h3>
-          <p>
+          <h3 data-i18n="colosseum.laterTitle">Later Centuries</h3>
+          <p data-i18n="colosseum.later">
             After the fall of the Western Roman Empire, the Colosseum suffered
             neglect, earthquakes, and stone-robbing. In the Middle Ages it was
             used as housing, workshops, and a fortress. Modern restoration and
@@ -170,40 +189,40 @@
         </article>
         <aside class="guide-facts">
           <div class="facts-heading">
-            <h2>Quick Facts</h2>
+            <h2 data-i18n="guide.facts">Quick Facts</h2>
           </div>
           <ul
             class="fact-list"
             id="facts-list"
             tabindex="0"
-            aria-label="Quick facts"
+            aria-label="Quick facts" data-i18n-attr="aria-label:guide.factsLabel"
           >
-            <li><strong>Country</strong>Italy</li>
-            <li><strong>City</strong>Rome</li>
-            <li><strong>Built</strong>70-80 AD</li>
-            <li><strong>Capacity</strong>50,000 - 80,000</li>
-            <li><strong>Original Name</strong>Flavian Amphitheatre</li>
-            <li><strong>Height</strong>≈ 48 metres</li>
-            <li><strong>UNESCO Status</strong>World Heritage (1980)</li>
-            <li><strong>Main Purpose</strong>Games &amp; spectacles</li>
+            <li><strong data-i18n="guide.country">Country</strong><span data-i18n="colosseum.factCountry">Italy</span></li>
+            <li><strong data-i18n="guide.city">City</strong><span data-i18n="colosseum.factCity">Rome</span></li>
+            <li><strong data-i18n="guide.built">Built</strong><span data-i18n="colosseum.factBuilt">70-80 AD</span></li>
+            <li><strong data-i18n="guide.capacity">Capacity</strong><span data-i18n="colosseum.factCapacity">50,000 - 80,000</span></li>
+            <li><strong data-i18n="guide.originalName">Original Name</strong><span data-i18n="colosseum.factName">Flavian Amphitheatre</span></li>
+            <li><strong data-i18n="guide.height">Height</strong><span data-i18n="colosseum.factHeight">≈ 48 metres</span></li>
+            <li><strong data-i18n="guide.unesco">UNESCO Status</strong><span data-i18n="colosseum.factUnesco">World Heritage (1980)</span></li>
+            <li><strong data-i18n="guide.mainPurpose">Main Purpose</strong><span data-i18n="colosseum.factPurpose">Games &amp; spectacles</span></li>
           </ul>
         </aside>
       </div>
       <section
         class="guide-highlights container"
-        aria-label="Visitor highlights"
+        aria-label="Visitor highlights" data-i18n-attr="aria-label:guide.highlights"
       >
         <div class="info-grid">
           <div class="info-box">
-            <h4>Best Photo Spots</h4>
-            <p>
+            <h4 data-i18n="guide.photos">Best Photo Spots</h4>
+            <p data-i18n="colosseum.photos">
               The exterior arches at golden hour, the view from Via dei Fori
               Imperiali, and upper-tier arena overlooks if your ticket allows.
             </p>
           </div>
           <div class="info-box">
-            <h4>Nearby Highlights</h4>
-            <p>
+            <h4 data-i18n="guide.nearby">Nearby Highlights</h4>
+            <p data-i18n="colosseum.nearby">
               Roman Forum, Palatine Hill, and the Arch of Constantine are steps
               away, ideal as a combined half-day visit.
             </p>
@@ -213,22 +232,22 @@
       <section
         class="photo-section"
         data-gallery
-        aria-label="Colosseum photo gallery"
+        aria-label="Colosseum photo gallery" data-i18n-attr="aria-label:colosseum.galleryLabel"
       >
         <div class="gallery-toolbar container">
-          <h2>A closer look.</h2>
+          <h2 data-i18n="guide.closer">A closer look.</h2>
           <div class="gallery-controls">
             <span class="gallery-count" aria-live="polite">1 / 5</span
             ><button
               type="button"
               class="gallery-prev"
-              aria-label="Previous photograph"
+              aria-label="Previous photograph" data-i18n-attr="aria-label:media.prev"
             >
               ←</button
             ><button
               type="button"
               class="gallery-next"
-              aria-label="Next photograph"
+              aria-label="Next photograph" data-i18n-attr="aria-label:media.next"
             >
               →
             </button>
@@ -237,13 +256,13 @@
         <div
           class="gallery-viewport"
           tabindex="0"
-          aria-label="Photographs, use arrow keys to browse"
+          aria-label="Photographs, use arrow keys to browse" data-i18n-attr="aria-label:media.browse"
         >
           <div class="gallery-track">
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/colosseum.webp"
-                alt="Flavian Amphitheatre"
+                alt="Flavian Amphitheatre" data-i18n-attr="alt:colosseum.g1Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -254,14 +273,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Flavian Amphitheatre</h4>
-                <p>Completed in 80 AD under Emperor Titus for public games.</p>
+                <h4 data-i18n="colosseum.g1Title">Flavian Amphitheatre</h4>
+                <p data-i18n="colosseum.g1">Completed in 80 AD under Emperor Titus for public games.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/colosseum-2.webp"
-                alt="Iconic Arches"
+                alt="Iconic Arches" data-i18n-attr="alt:colosseum.g2Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -272,14 +291,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Iconic Arches</h4>
-                <p>Three tiers of arches defined Roman engineering ambition.</p>
+                <h4 data-i18n="colosseum.g2Title">Iconic Arches</h4>
+                <p data-i18n="colosseum.g2">Three tiers of arches defined Roman engineering ambition.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/colosseum-3.webp"
-                alt="Heart of Rome"
+                alt="Heart of Rome" data-i18n-attr="alt:colosseum.g3Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -290,14 +309,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Heart of Rome</h4>
-                <p>The Colosseum still anchors the city’s historic centre.</p>
+                <h4 data-i18n="colosseum.g3Title">Heart of Rome</h4>
+                <p data-i18n="colosseum.g3">The Colosseum still anchors the city’s historic centre.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/colosseum-4.webp"
-                alt="Underground Hypogeum"
+                alt="Underground Hypogeum" data-i18n-attr="alt:colosseum.g4Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -308,14 +327,14 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Underground Hypogeum</h4>
-                <p>A maze of tunnels once held gladiators and wild animals.</p>
+                <h4 data-i18n="colosseum.g4Title">Underground Hypogeum</h4>
+                <p data-i18n="colosseum.g4">A maze of tunnels once held gladiators and wild animals.</p>
               </figcaption>
             </figure>
             <figure class="gallery-slide">
               <img
                 src="./image/optimized/colosseum-5.webp"
-                alt="Forum Views"
+                alt="Forum Views" data-i18n-attr="alt:colosseum.g5Alt"
                 loading="lazy"
                 width="1200"
                 height="800"
@@ -326,8 +345,8 @@
                 sizes="(min-width: 1024px) 76vw, 100vw"
               />
               <figcaption>
-                <h4>Forum Views</h4>
-                <p>Pair your visit with the Roman Forum and Palatine Hill.</p>
+                <h4 data-i18n="colosseum.g5Title">Forum Views</h4>
+                <p data-i18n="colosseum.g5">Pair your visit with the Roman Forum and Palatine Hill.</p>
               </figcaption>
             </figure>
           </div>
@@ -336,48 +355,34 @@
       <div class="guide-practical container">
         <div class="book-cta">
           <p>
-            <strong>Fly to Rome for the Colosseum</strong>Search sample flights
-            from Hong Kong.
-          </p>
-          <a href="./booking.html?to=colosseum" class="btn">Book a flight</a>
+            <strong data-i18n="colosseum.fly">Fly to Rome for the Colosseum</strong><span data-i18n="guide.searchHk">Search sample flights from Hong Kong.</span></p>
+          <a href="./booking.html?to=colosseum" class="btn" data-i18n="guide.book">Book a flight</a>
         </div>
         <div class="tips-section reveal">
-          <h3>Travel Tips for Visitors</h3>
+          <h3 data-i18n="guide.tips">Travel Tips for Visitors</h3>
           <ul class="tips-list">
             <li>
-              <strong>Best time:</strong> Early morning or late afternoon.
-              Spring and autumn offer the most pleasant weather.
-            </li>
+              <strong data-i18n="guide.tipTime">Best time:</strong> <span data-i18n="colosseum.tipTime">Early morning or late afternoon. Spring and autumn offer the most pleasant weather.</span></li>
             <li>
-              <strong>Tickets:</strong> Buy online in advance. Combined tickets
-              with the Roman Forum and Palatine Hill offer better value.
-            </li>
+              <strong data-i18n="guide.tipTickets">Tickets:</strong> <span data-i18n="colosseum.tipTickets">Buy online in advance. Combined tickets with the Roman Forum and Palatine Hill offer better value.</span></li>
             <li>
-              <strong>Getting there:</strong> Colosseo metro station (Line B) is
-              right beside the monument.
-            </li>
+              <strong data-i18n="guide.tipThere">Getting there:</strong> <span data-i18n="colosseum.tipThere">Colosseo metro station (Line B) is right beside the monument.</span></li>
             <li>
-              <strong>Duration:</strong> Allow 1.5-3 hours; longer if you join a
-              guided tour or visit underground areas.
-            </li>
+              <strong data-i18n="guide.tipDuration">Duration:</strong> <span data-i18n="colosseum.tipDuration">Allow 1.5-3 hours; longer if you join a guided tour or visit underground areas.</span></li>
             <li>
-              <strong>What to bring:</strong> Comfortable shoes, water, sun
-              protection, and a light layer for cooler months.
-            </li>
+              <strong data-i18n="guide.tipBring">What to bring:</strong> <span data-i18n="colosseum.tipBring">Comfortable shoes, water, sun protection, and a light layer for cooler months.</span></li>
             <li>
-              <strong>Local tip:</strong> A guided tour or audio guide makes the
-              ruins far more meaningful than walking alone.
-            </li>
+              <strong data-i18n="guide.tipLocal">Local tip:</strong> <span data-i18n="colosseum.tipLocal">A guided tour or audio guide makes the ruins far more meaningful than walking alone.</span></li>
           </ul>
         </div>
         <div class="video-section reveal">
-          <h3>Watch a Video about the Colosseum</h3>
-          <p>Learn more about this landmark with the documentary below:</p>
+          <h3 data-i18n="colosseum.videoTitle">Watch a Video about the Colosseum</h3>
+          <p data-i18n="guide.docIntro">Learn more about this landmark with the documentary below:</p>
           <div class="video-container">
             <button
               class="video-poster"
               type="button"
-              aria-label="Play the documentary"
+              aria-label="Play the documentary" data-i18n-attr="aria-label:media.play"
             >
               <img
                 src="./image/optimized/colosseum-800.webp"
@@ -385,26 +390,26 @@
                 width="800"
                 height="530"
                 loading="lazy"
-              /><span>▶ Play documentary</span>
+              /><span data-i18n="media.playLabel">▶ Play documentary</span>
             </button>
             <div class="embed-loading" hidden role="status">
               <div class="orb-loader" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
-              <p>Loading the documentary...</p>
+              <p data-i18n="media.loading">Loading the documentary...</p>
               <a
                 class="embed-fallback text-link"
                 href="https://www.youtube.com/watch?v=lxUuufuUEiU"
                 target="_blank"
                 rel="noopener"
                 hidden
-                >Open on YouTube ↗</a
+                 data-i18n="media.youtube">Open on YouTube ↗</a
               >
             </div>
             <iframe
               hidden
               data-src="https://www.youtube.com/embed/lxUuufuUEiU"
-              title="Colosseum Documentary"
+              title="Colosseum Documentary" data-i18n-attr="title:colosseum.iframe"
               allow="
                 accelerometer;
                 autoplay;
@@ -422,7 +427,7 @@
             ><noscript
               ><iframe
                 src="https://www.youtube.com/embed/lxUuufuUEiU"
-                title="Colosseum Documentary"
+                title="Colosseum Documentary" data-i18n-attr="title:colosseum.iframe"
                 allow="
                   accelerometer;
                   autoplay;
@@ -442,7 +447,7 @@
         </div>
       </div>
       <section class="more-destinations container">
-        <h2>Where next?</h2>
+        <h2 data-i18n="guide.where">Where next?</h2>
         <ul class="related-list">
           <li>
             <a href="./eiffel-tower.html"
@@ -454,7 +459,7 @@
                   ./image/optimized/eiffel-tower.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Eiffel Tower</a
+              /><span data-i18n="nav.eiffel">Eiffel Tower</span></a
             >
           </li>
           <li>
@@ -467,7 +472,7 @@
                   ./image/optimized/machu-picchu.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Machu Picchu</a
+              /><span data-i18n="nav.machu">Machu Picchu</span></a
             >
           </li>
           <li>
@@ -480,7 +485,7 @@
                   ./image/optimized/taj-mahal.webp     1600w
                 "
                 sizes="(min-width: 1024px) 60vw, 100vw"
-              />Taj Mahal</a
+              /><span data-i18n="nav.taj">Taj Mahal</span></a
             >
           </li>
         </ul>
@@ -490,42 +495,43 @@
       <div class="footer-inner">
         <div class="footer-col">
           <div class="footer-brand">Wanderlust <span>World</span></div>
-          <p>
+          <p data-i18n="footer.blurb">
             Discover remarkable places through their history, culture and the
             journeys that take you there.
           </p>
         </div>
         <div class="footer-col">
-          <h3>Destinations</h3>
+          <h3 data-i18n="footer.destinations">Destinations</h3>
           <ul>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Explore</h3>
+          <h3 data-i18n="footer.explore">Explore</h3>
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#destinations">Featured Places</a></li>
-            <li><a href="./booking.html">Book Flights</a></li>
-            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./index.html#destinations" data-i18n="footer.featured">Featured Places</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
+            <li><a href="./index.html#plan" data-i18n="home.planLink">Plan Your Trip</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
-        <a href="#top">Back to top ↑</a>
+        <p data-i18n="footer.copy">&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top" data-i18n="footer.top">Back to top ↑</a>
       </div>
     </footer>
-    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+    <button class="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:footer.topLabel" hidden>
       ↑
     </button>
     <script src="./js/vendor/gsap.min.js" defer></script>
     <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
     <script src="./js/vendor/thinking-orbs.min.js" defer></script>
-    <script src="./js/orbs.js?v=20261010-4" defer></script>
-    <script src="./js/script.js?v=20261010-4" defer></script>
+    <script src="./js/orbs.js?v=20261010-5" defer></script>
+    <script src="./js/i18n.js?v=20261010-5" defer></script>
+    <script src="./js/script.js?v=20261010-5" defer></script>
   </body>
 </html>

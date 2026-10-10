@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const t = (key, vars) => (window.wwT ? window.wwT(key, vars) : key);
+  try {
+    window.wwApply?.();
+  } finally {
+    document.documentElement.classList.remove("i18n-pending");
+  }
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
   const cleanups = [];
@@ -23,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const failed = () => {
         shell.classList.remove("media-loading");
         skeleton.className = "media-error";
-        skeleton.textContent = "Image unavailable";
+        skeleton.setAttribute("data-i18n", "media.unavailable");
+        skeleton.textContent = t("media.unavailable");
       };
       image.addEventListener("load", loaded, { once: true });
       image.addEventListener("error", failed, { once: true });
@@ -51,8 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "error",
           () => {
             clearTimeout(slowTimer);
-            loader.querySelector("p").textContent =
-              "The video could not be loaded.";
+            const message = loader.querySelector("p");
+            message.setAttribute("data-i18n", "media.videoError");
+            message.textContent = t("media.videoError");
             loader.querySelector(".orb-loader").hidden = true;
             loader.querySelector(".embed-fallback").hidden = false;
           },
@@ -77,8 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateThemeLabel = () => {
     if (!themeButton) return;
     const theme = currentTheme();
-    const label =
-      "Switch to " + (theme === "dark" ? "light" : "dark") + " theme";
+    const label = t(theme === "dark" ? "nav.themeToLight" : "nav.themeToDark");
     themeButton.dataset.theme = theme;
     themeButton.querySelector(".sr-only").textContent = label;
     themeButton.setAttribute("aria-label", label);
@@ -110,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuButton.setAttribute("aria-expanded", String(open));
     menuButton.setAttribute(
       "aria-label",
-      open ? "Close navigation" : "Open navigation",
+      open ? t("nav.close") : t("nav.open"),
     );
     if (open) {
       menuBackground.forEach((element) => {
@@ -131,6 +138,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const open = !navContainer.classList.contains("nav-open");
     setMenu(open);
     if (open) menu?.querySelector("a")?.focus();
+  });
+  document.querySelectorAll("[data-set-lang]").forEach((button) => {
+    button.addEventListener("click", () => {
+      window.wwSetLang?.(button.getAttribute("data-set-lang"));
+    });
+  });
+  document.addEventListener("ww:lang", () => {
+    updateThemeLabel();
+    if (!menuButton) return;
+    const open = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-label", open ? t("nav.close") : t("nav.open"));
   });
   document.addEventListener("click", (event) => {
     if (!navContainer?.contains(event.target)) closeMenu();

@@ -2852,3 +2852,141 @@ html:not(.js-enabled) .video-poster {
     padding-block: 16px 22px;
   }
 }
+
+html.i18n-pending body {
+  visibility: hidden;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 44px;
+  margin-right: 2px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+}
+.lang-switch button {
+  height: 36px;
+  min-width: 40px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.lang-switch button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.lang-switch button:hover:not([aria-pressed="true"]) {
+  color: var(--ink);
+}
+
+.journey-photo .image-shell,
+.journey-photo img,
+.plan-section .image-shell,
+.plan-section img,
+.gallery-slide .image-shell,
+.gallery-slide img,
+.related-list img,
+.booking-hero .image-shell,
+.booking-hero img,
+.fare-expand-image,
+.fare-expand-image img,
+.video-container {
+  border-radius: 16px;
+}
+.home-hero .hero-media,
+.home-hero .hero-media .image-shell,
+.home-hero .hero-media img,
+.attraction-hero .hero-media,
+.attraction-hero .hero-media .image-shell,
+.attraction-hero .hero-media img,
+.is-pinned .journey-photo .image-shell,
+.is-pinned .journey-photo img {
+  border-radius: 0;
+}
+
+html[lang="zh-HK"] body {
+  font-family: "PingFang HK", "PingFang TC", "Noto Sans HK", "Microsoft JhengHei",
+    sans-serif;
+  line-height: 1.75;
+}
+html[lang="zh-HK"] :is(h1, h2, h3, h4),
+html[lang="zh-HK"] .home-hero h1,
+html[lang="zh-HK"] .attraction-hero h1,
+html[lang="zh-HK"] .guide-story h3,
+html[lang="zh-HK"] .guide-facts h2,
+html[lang="zh-HK"] .is-pinned .journey-copy h3 {
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+html[lang="zh-HK"] :is(.lang-switch button, .theme-toggle, .hamburger-btn, .btn, .main-nav a) {
+  line-height: 1.2;
+}
+html[lang="zh-HK"] .journey-copy > p:not(.destination-location),
+html[lang="zh-HK"] .notes-grid p,
+html[lang="zh-HK"] .plan-copy p,
+html[lang="zh-HK"] .booking-hero p,
+html[lang="zh-HK"] .section-intro p,
+html[lang="zh-HK"] .info-box p,
+html[lang="zh-HK"] .tips-list li {
+  max-width: 36em;
+}
+html[lang="zh-HK"] .guide-story p {
+  max-width: 40em;
+}
+html[lang="zh-HK"] .is-pinned .journey-copy h3 {
+  max-width: 9em;
+}
+@media (max-width: 767px) {
+  .lang-switch {
+    height: 40px;
+    margin-right: 0;
+    padding: 3px;
+  }
+  .lang-switch button {
+    height: 32px;
+    min-width: 34px;
+    padding: 0 8px;
+  }
+  html[lang="zh-HK"] .home-hero h1 {
+    max-width: 8em;
+  }
+  html[lang="zh-HK"] .journey-copy h3 {
+    max-width: 9em;
+  }
+}
+@media (max-width: 374px) {
+  .lang-switch {
+    height: 36px;
+    padding: 2px;
+  }
+  .lang-switch button {
+    height: 30px;
+    min-width: 26px;
+    padding: 0 5px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+  .theme-toggle,
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .logo {
+    font-size: 15px;
+    letter-spacing: -0.05em;
+  }
+  .logo img {
+    width: 20px;
+    height: 20px;
+  }
+}

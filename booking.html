@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Search and book flight tickets to Paris, Rome, Lima and New Delhi."
+      content="Search and book flight tickets to Paris, Rome, Lima and New Delhi." data-i18n-attr="content:booking.metaDescription"
     />
-    <title>Book Flights | Wanderlust World</title>
+    <title data-i18n="booking.metaTitle">Book Flights | Wanderlust World</title>
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="./image/wanderlust.png" type="image/png" />
 
@@ -20,35 +20,54 @@
       imagesizes="(min-width: 1024px) 60vw, 100vw"
     />
     <script src="./js/theme.js"></script>
-    <link rel="stylesheet" href="./css/styles.css?v=20261010-4" />
+    <script src="./js/lang.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20261010-6" />
   </head>
   <body id="top" class="page-booking">
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="nav-container">
         <a href="./index.html" class="logo"
           ><img
             src="./image/wanderlust.png"
-            alt="Wanderlust logo"
+            alt="Wanderlust logo" data-i18n-attr="alt:common.logoAlt"
             width="32"
             height="32"
           />Wanderlust <span>World</span></a
         >
-        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.main">
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
             <li>
               <a href="./booking.html" class="active" aria-current="page"
-                >Book Flights</a
+                 data-i18n="nav.flights">Book Flights</a
               >
             </li>
           </ul>
         </nav>
         <div class="header-actions">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:lang.group"
+          >
+            <button type="button" data-set-lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button
+              type="button"
+              data-set-lang="zh-HK"
+              lang="zh-HK"
+              aria-pressed="false"
+            >
+              繁
+            </button>
+          </div>
           <button
             class="theme-toggle"
             type="button"
@@ -74,7 +93,7 @@
           <button
             class="hamburger-btn"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Open navigation" data-i18n-attr="aria-label:nav.open"
             aria-controls="main-nav"
             aria-expanded="false"
           >
@@ -86,18 +105,18 @@
     <main id="main-content" class="booking-main container">
       <section class="booking-hero">
         <div>
-          <h1>Every journey<br />starts somewhere.</h1>
-          <p>
+          <h1 data-i18n-html="booking.heroTitle">Every journey<br />starts somewhere.</h1>
+          <p data-i18n="booking.heroLead">
             Compare flights from Hong Kong to Paris, Rome, Lima and New Delhi.
           </p>
           <a class="text-link" href="#search-form"
-            >Find Your Flight <span aria-hidden="true">↘</span></a
+            ><span data-i18n="booking.find">Find Your Flight</span> <span aria-hidden="true">↘</span></a
           >
         </div>
         <figure>
           <img
             src="./image/optimized/booking-banner.webp"
-            alt="A view above the clouds from an aircraft window"
+            alt="A view above the clouds from an aircraft window" data-i18n-attr="alt:booking.heroAlt"
             width="1600"
             height="1063"
             fetchpriority="high"
@@ -112,42 +131,42 @@
       <section class="booking-panel">
         <form id="search-form" class="search-form">
           <div class="search-heading">
-            <h2>Find your route.</h2>
-            <p>Departing from Hong Kong (HKG). Fares shown in HKD.</p>
+            <h2 data-i18n="booking.routeTitle">Find your route.</h2>
+            <p data-i18n="booking.routeNote">Departing from Hong Kong (HKG). Fares shown in HKD.</p>
           </div>
           <div class="form-row form-row-3">
             <div class="form-group">
-              <label for="destination">Destination</label>
+              <label for="destination" data-i18n="booking.destination">Destination</label>
               <select id="destination" name="destination" required>
-                <option value="">Select destination</option>
-                <option value="eiffel-tower">Paris (Eiffel Tower)</option>
-                <option value="colosseum">Rome (Colosseum)</option>
-                <option value="machu-picchu">Lima (Machu Picchu)</option>
-                <option value="taj-mahal">New Delhi (Taj Mahal)</option>
+                <option value="" data-i18n="booking.selectDestination">Select destination</option>
+                <option value="eiffel-tower" data-i18n="booking.optParis">Paris (Eiffel Tower)</option>
+                <option value="colosseum" data-i18n="booking.optRome">Rome (Colosseum)</option>
+                <option value="machu-picchu" data-i18n="booking.optLima">Lima (Machu Picchu)</option>
+                <option value="taj-mahal" data-i18n="booking.optDelhi">New Delhi (Taj Mahal)</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="depart-date">Departure date</label>
+              <label for="depart-date" data-i18n="booking.departDate">Departure date</label>
               <select id="depart-date" name="depart-date">
-                <option value="">Any available date</option>
-                <option value="2026-11-12">12 Nov 2026</option>
-                <option value="2026-11-13">13 Nov 2026</option>
-                <option value="2026-11-14">14 Nov 2026</option>
-                <option value="2026-11-15">15 Nov 2026</option>
-                <option value="2026-11-18">18 Nov 2026</option>
-                <option value="2026-11-19">19 Nov 2026</option>
-                <option value="2026-11-20">20 Nov 2026</option>
-                <option value="2026-11-22">22 Nov 2026</option>
+                <option value="" data-i18n="booking.anyDate">Any available date</option>
+                <option value="2026-11-12" data-i18n="booking.d20261112">12 Nov 2026</option>
+                <option value="2026-11-13" data-i18n="booking.d20261113">13 Nov 2026</option>
+                <option value="2026-11-14" data-i18n="booking.d20261114">14 Nov 2026</option>
+                <option value="2026-11-15" data-i18n="booking.d20261115">15 Nov 2026</option>
+                <option value="2026-11-18" data-i18n="booking.d20261118">18 Nov 2026</option>
+                <option value="2026-11-19" data-i18n="booking.d20261119">19 Nov 2026</option>
+                <option value="2026-11-20" data-i18n="booking.d20261120">20 Nov 2026</option>
+                <option value="2026-11-22" data-i18n="booking.d20261122">22 Nov 2026</option>
               </select>
             </div>
             <div class="form-group form-actions">
               <label>&nbsp;</label>
-              <button type="submit" class="btn btn-search">
+              <button type="submit" class="btn btn-search" data-i18n="booking.search">
                 Search flights
               </button>
             </div>
           </div>
-          <p class="demo-note">
+          <p class="demo-note" data-i18n="booking.demo">
             Sample flights and bookings for demonstration. No payment or live
             reservation is made.
           </p>
@@ -163,8 +182,8 @@
               <span></span><span></span><span></span>
             </div>
             <div>
-              <p class="loading-title">Finding sample flights...</p>
-              <p class="loading-caption">Matching routes and cabin fares.</p>
+              <p class="loading-title" data-i18n="booking.loadingTitle">Finding sample flights...</p>
+              <p class="loading-caption" data-i18n="booking.loadingCaption">Matching routes and cabin fares.</p>
             </div>
             <span class="loading-step" aria-hidden="true">1 / 3</span>
           </div>
@@ -234,7 +253,7 @@
           aria-live="polite"
           aria-atomic="false"
         >
-          <p class="results-placeholder">
+          <p class="results-placeholder" data-i18n="booking.placeholder">
             Choose a destination and search to see available flights.
           </p>
         </div>
@@ -252,26 +271,26 @@
             type="button"
             class="modal-close"
             data-close-modal
-            aria-label="Close"
+            aria-label="Close" data-i18n-attr="aria-label:booking.close"
           >
             &times;
           </button>
-          <h2 id="modal-title">Complete your booking</h2>
+          <h2 id="modal-title" data-i18n="booking.modalTitle">Complete your booking</h2>
           <div id="modal-flight-summary" class="modal-summary"></div>
           <form id="booking-form" class="booking-form">
             <div class="form-row two-col">
               <div class="form-group">
-                <label for="passenger-name">Full name</label>
+                <label for="passenger-name" data-i18n="booking.fullName">Full name</label>
                 <input
                   type="text"
                   autocomplete="name"
                   id="passenger-name"
                   required
-                  placeholder="As on passport"
+                  placeholder="As on passport" data-i18n-attr="placeholder:booking.passport"
                 />
               </div>
               <div class="form-group">
-                <label for="passenger-email">Email</label>
+                <label for="passenger-email" data-i18n="booking.email">Email</label>
                 <input
                   type="email"
                   autocomplete="email"
@@ -283,7 +302,7 @@
             </div>
             <div class="form-row two-col">
               <div class="form-group">
-                <label for="passengers">Passengers</label>
+                <label for="passengers" data-i18n="booking.passengers">Passengers</label>
                 <select id="passengers" required>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -292,7 +311,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="passenger-phone">Phone (optional)</label>
+                <label for="passenger-phone" data-i18n="booking.phone">Phone (optional)</label>
                 <input
                   type="tel"
                   autocomplete="tel"
@@ -301,11 +320,11 @@
                 />
               </div>
             </div>
-            <p class="form-note">
+            <p class="form-note" data-i18n="booking.formNote">
               Please check your details carefully before confirming. A booking
               reference will be issued after submission.
             </p>
-            <button type="submit" class="btn btn-search">
+            <button type="submit" class="btn btn-search" data-i18n="booking.confirm">
               Confirm booking
             </button>
           </form>
@@ -319,8 +338,8 @@
               data-orb-state="composing"
               aria-hidden="true"
             ></div>
-            <p class="progress-title">Creating your sample itinerary...</p>
-            <p class="loading-caption">Saving your selection on this device.</p>
+            <p class="progress-title" data-i18n="booking.creating">Creating your sample itinerary...</p>
+            <p class="loading-caption" data-i18n="booking.progressCaption">Saving your selection on this device.</p>
             <span class="search-progress" aria-hidden="true"></span>
             <div class="confirmation-skeleton" aria-hidden="true">
               <div>
@@ -347,27 +366,27 @@
             type="button"
             class="modal-close"
             data-close-confirm
-            aria-label="Close"
+            aria-label="Close" data-i18n-attr="aria-label:booking.close"
           >
             &times;
           </button>
           <div class="confirmation-heading">
             <div class="confirm-icon" aria-hidden="true"></div>
             <div>
-              <h2 id="confirm-title">Booking confirmed</h2>
-              <p class="confirm-intro">Your sample itinerary is ready.</p>
+              <h2 id="confirm-title" data-i18n="booking.confirmedTitle">Booking confirmed</h2>
+              <p class="confirm-intro" data-i18n="booking.confirmedIntro">Your sample itinerary is ready.</p>
             </div>
           </div>
           <div id="confirm-details"></div>
-          <p class="confirmation-note">
+          <p class="confirmation-note" data-i18n="booking.confirmedNote">
             Demo booking only. No payment or live reservation.
           </p>
-          <button type="button" class="btn" data-close-confirm>Done</button>
+          <button type="button" class="btn" data-close-confirm data-i18n="booking.done">Done</button>
         </div>
       </div>
     </main>
     <noscript
-      ><p class="no-results">
+      ><p class="no-results" data-i18n="booking.noscript">
         Enable JavaScript to search the sample flights and try the booking form.
       </p></noscript
     >
@@ -375,44 +394,45 @@
       <div class="footer-inner">
         <div class="footer-col">
           <div class="footer-brand">Wanderlust <span>World</span></div>
-          <p>
+          <p data-i18n="footer.blurb">
             Discover remarkable places through their history, culture and the
             journeys that take you there.
           </p>
         </div>
         <div class="footer-col">
-          <h3>Destinations</h3>
+          <h3 data-i18n="footer.destinations">Destinations</h3>
           <ul>
-            <li><a href="./eiffel-tower.html">Eiffel Tower</a></li>
-            <li><a href="./colosseum.html">Colosseum</a></li>
-            <li><a href="./machu-picchu.html">Machu Picchu</a></li>
-            <li><a href="./taj-mahal.html">Taj Mahal</a></li>
+            <li><a href="./eiffel-tower.html" data-i18n="nav.eiffel">Eiffel Tower</a></li>
+            <li><a href="./colosseum.html" data-i18n="nav.colosseum">Colosseum</a></li>
+            <li><a href="./machu-picchu.html" data-i18n="nav.machu">Machu Picchu</a></li>
+            <li><a href="./taj-mahal.html" data-i18n="nav.taj">Taj Mahal</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Explore</h3>
+          <h3 data-i18n="footer.explore">Explore</h3>
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./index.html#destinations">Featured Places</a></li>
-            <li><a href="./booking.html">Book Flights</a></li>
-            <li><a href="./index.html#plan">Plan Your Trip</a></li>
+            <li><a href="./index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="./index.html#destinations" data-i18n="footer.featured">Featured Places</a></li>
+            <li><a href="./booking.html" data-i18n="nav.flights">Book Flights</a></li>
+            <li><a href="./index.html#plan" data-i18n="home.planLink">Plan Your Trip</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Wanderlust World · All the world is my home.</p>
-        <a href="#top">Back to top ↑</a>
+        <p data-i18n="footer.copy">&copy; 2026 Wanderlust World · All the world is my home.</p>
+        <a href="#top" data-i18n="footer.top">Back to top ↑</a>
       </div>
     </footer>
-    <button class="back-to-top" type="button" aria-label="Back to top" hidden>
+    <button class="back-to-top" type="button" aria-label="Back to top" data-i18n-attr="aria-label:footer.topLabel" hidden>
       ↑
     </button>
     <script src="./js/vendor/gsap.min.js" defer></script>
     <script src="./js/vendor/ScrollTrigger.min.js" defer></script>
     <script src="./js/vendor/thinking-orbs.min.js" defer></script>
-    <script src="./js/orbs.js?v=20261010-4" defer></script>
-    <script src="./js/script.js?v=20261010-4" defer></script>
+    <script src="./js/orbs.js?v=20261010-5" defer></script>
+    <script src="./js/i18n.js?v=20261010-5" defer></script>
+    <script src="./js/script.js?v=20261010-5" defer></script>
     <script src="./data/tickets.js" defer></script>
-    <script src="./js/booking.js?v=20261010-4" defer></script>
+    <script src="./js/booking.js?v=20261010-5" defer></script>
   </body>
 </html>
